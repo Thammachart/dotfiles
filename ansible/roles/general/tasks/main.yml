@@ -12,6 +12,8 @@
     - base-devel
     - ttf-hack
     - noto-fonts
+    - ttf-jetbrains-mono
+    - ttf-cascadia-code
     state: present
 - name: Add {{ superuser_group }} group to {{ ansible_user_id }}
   become: true
@@ -36,6 +38,11 @@
     state: present
     validate: "visudo -cf %s"
 - name: Enable Magic SysRq = {{ magicsysrq }}
+  become: true
+  lineinfile:
+    path: /etc/sysctl.d/magic-sysrq.conf
+    line: "kernel.sysrq = {{ magicsysrq }}"
+    state: present
 - name: Install AUR Helper
   aur:
     name: yay-bin
