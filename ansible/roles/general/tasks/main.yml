@@ -1,0 +1,42 @@
+---
+- name: Install necessities
+  become: true
+  package:
+    name: 
+    - sudo
+    - curl
+    - wget
+    - vim
+    - ripgrep
+    - neovim
+    - base-devel
+    - ttf-hack
+    - noto-fonts
+    state: present
+- name: Add {{ superuser_group }} group to {{ ansible_user_id }}
+  become: true
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: "{{ superuser_group }}"
+    append: true
+- name: Register {{ superuser_group }} group to sudoers.d
+  become: true
+  lineinfile:
+    path: /etc/sudoers.d/00-{{ superuser_group }}-group
+    line: "%{{ superuser_group }} ALL=(ALL) NOPASSWD: ALL"
+    state: present
+    mode: 0440
+    create: true
+    validate: "visudo -cf %s"
+- name: Include sudoers.d if not present
+  become: true
+  lineinfile:
+    path: /etc/sudoers
+    line: "#includedir /etc/sudoers.d"
+    state: present
+    validate: "visudo -cf %s"
+- name: Enable Magic SysRq = {{ magicsysrq }}
+- name: Install AUR Helper
+  aur:
+    name: yay-bin
+    #skip_installed: true

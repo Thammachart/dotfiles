@@ -1,0 +1,8 @@
+# antibody bundle < zsh_plugins.txt > 020-antibody.zsh
+bhilburn/powerlevel9k
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-completions
+caarlos0/zsh-mkc
+djui/alias-tips
+trystan2k/zsh-tab-title

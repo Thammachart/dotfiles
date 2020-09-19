@@ -1,0 +1,7 @@
+---
+- name: Install ssh
+  become: true
+  package:
+    name:
+    - openssh
+    state: present
