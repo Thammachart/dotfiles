@@ -2,7 +2,7 @@
 - name: Install necessities
   become: true
   package:
-    name: 
+    name:
     - sudo
     - curl
     - wget
@@ -10,16 +10,33 @@
     - ripgrep
     - neovim
     - base-devel
-    - ttf-hack
-    - noto-fonts
-    - ttf-jetbrains-mono
-    - ttf-cascadia-code
+    - python
+    - python-pip
+    - python-psutil
+    - man
+    - htop
+    - bashtop
+    - openssh
+    - networkmanager
+    - iwd
+    - ldns
+    - zsh
+    - lsd
+    - java-runtime-common
+    - java-environment-common
+    - yarn
+    - rustup
+    - docker
+    - docker-compose
     state: present
-- name: Add {{ superuser_group }} group to {{ ansible_user_id }}
+- name: Add groups to {{ ansible_user_id }}
   become: true
   user:
     name: "{{ ansible_user_id }}"
-    groups: "{{ superuser_group }}"
+    groups:
+    - "{{ superuser_group }}"
+    - docker
+    - video
     append: true
 - name: Register {{ superuser_group }} group to sudoers.d
   become: true
@@ -47,3 +64,21 @@
   aur:
     name: yay-bin
     #skip_installed: true
+- name: Install AUR Components
+  aur:
+    name:
+    - fnm-bin
+    - antibody-bin
+    - nerd-fonts-hack
+- name: Enable NetworkManager Service
+  become: true
+  systemd:
+    name: NetworkManager
+    enabled: true
+    masked: false
+- name: Enable fstrim Timer
+  become: true
+  systemd:
+    name: fstrim.timer
+    enabled: true
+    masked: false

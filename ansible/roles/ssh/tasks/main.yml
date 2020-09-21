@@ -5,3 +5,22 @@
     name:
     - openssh
     state: present
+- name: Create ssh directory
+  file:
+    name: '{{ ssh_directory }}'
+    state: directory
+    mode: 0700
+- name: Create Personal KeyPair
+  openssh_keypair:
+    path: '{{ ssh_directory }}/id_rsa'
+    type: rsa
+    size: 4096
+- name: Create Work KeyPair
+  openssh_keypair:
+    path: '{{ ssh_directory }}/id_rsa_shobshop'
+    type: rsa
+    size: 4096
+- name: Create SSH Config file
+  copy:
+    src: config
+    dest: '{{ ssh_directory }}/config'

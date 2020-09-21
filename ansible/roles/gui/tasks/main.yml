@@ -1,0 +1,29 @@
+---
+- name: Install GUI-related components
+  become: true
+  package:
+    name:
+    - ttf-hack
+    - ttf-jetbrains-mono
+    - ttf-cascadia-code
+    - ttf-liberation
+    - noto-fonts
+    - noto-fonts-cjk
+    - firefox
+    - firefox-developer-edition
+    - chromium
+    - mesa
+    - libva-mesa-driver
+    - libva-utils
+    - sway
+    - swayidle
+    - swaylock
+    - waybar
+    - mako
+    - wofi
+    - alacritty
+    - xorg-server-xwayland
+    - geany
+    - code
+    - libnotify
+    state: present

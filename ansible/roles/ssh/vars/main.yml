@@ -1,0 +1,2 @@
+---
+  ssh_directory: '{{ ansible_env.HOME }}/.ssh'

@@ -1,9 +1,4 @@
-- name: Install zsh
-  become: true
-  package:
-    name: 
-    - zsh
-    state: present
+---
 - name: Get absolute path of zsh
   shell: command -v zsh
   register: zsh_path
@@ -21,10 +16,6 @@
   user:
     name: "{{ ansible_user_id }}"
     shell: "{{ zsh_path.stdout }}"
-- name: Install antibody
-  aur:
-    name:
-    - antibody-bin
 - name: Initialize antibody plugins
   shell:
     cmd: antibody bundle < zsh_plugins.txt > 020-antibody.zsh
