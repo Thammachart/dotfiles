@@ -26,4 +26,6 @@
     - geany
     - code
     - libnotify
+    - syncthing
+    - keepassxc
     state: present

@@ -1,5 +1,5 @@
 [include]
-	path = /home/thammachart/.dotfiles.d/gitalias.txt
+	path = ~/.dotfiles.d/gitalias.txt
 [user]
 	name = Thammachart
 	useConfigOnly = true
