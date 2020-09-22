@@ -28,6 +28,7 @@
     - rustup
     - docker
     - docker-compose
+    - tlp
     state: present
 - name: Add groups to {{ ansible_user_id }}
   become: true
