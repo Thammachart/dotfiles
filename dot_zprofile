@@ -1,6 +1,7 @@
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   if [ -x "$(command -v sway)" ]; then
     export MOZ_ENABLE_WAYLAND=1
+    export XDG_CURRENT_DESKTOP=sway
     exec sway
   fi
 fi

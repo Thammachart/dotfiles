@@ -1,5 +1,5 @@
 ---
-- name: Install GUI-related components
+- name: Install GUI-related components (pacman)
   become: true
   package:
     name:
@@ -7,6 +7,9 @@
     - ttf-jetbrains-mono
     - ttf-cascadia-code
     - ttf-liberation
+    - ttf-ubuntu-font-family
+    - ttf-fira-code
+    - inter-font
     - noto-fonts
     - noto-fonts-cjk
     - firefox
@@ -20,12 +23,23 @@
     - swaylock
     - waybar
     - mako
+    - xdg-desktop-portal-wlr
     - wofi
     - alacritty
     - xorg-server-xwayland
+    - pulseaudio
+    - pavucontrol
     - geany
     - code
     - libnotify
     - syncthing
     - keepassxc
+    - papirus-icon-theme
+    - arc-gtk-theme
+    state: present
+- name: Install GUI-related components (AUR)
+  aur:
+    name:
+    - nerd-fonts-hack
+    - nerd-fonts-mononoki
     state: present

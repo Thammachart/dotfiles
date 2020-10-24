@@ -2,6 +2,11 @@
 
 set -e
 
+echo "Content Changed, if Ansible changed, do it manually"
+
+echo "$ chezmoi cd"
+echo "$ ansible-playbook -i ansible/hosts ansible/init.yml --ask-become-pass"
+
 # # Dotfiles' project root directory
 # ROOTDIR="$(pwd)/ansible"
 

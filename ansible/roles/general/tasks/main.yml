@@ -29,6 +29,7 @@
     - docker
     - docker-compose
     - tlp
+    - terminus-font
     state: present
 - name: Add groups to {{ ansible_user_id }}
   become: true
@@ -58,19 +59,33 @@
 - name: Enable Magic SysRq = {{ magicsysrq }}
   become: true
   lineinfile:
-    path: /etc/sysctl.d/magic-sysrq.conf
+    path: /etc/sysctl.d/00-magic-sysrq.conf
     line: "kernel.sysrq = {{ magicsysrq }}"
+    state: present
+# - name: Disable IPv6 due to timeout issue when connecting to IPv6-supported sites
+#   become: true
+#   lineinfile:
+#     path: /etc/sysctl.d/40-ipv6.conf
+#     line: "net.ipv6.conf.all.disable_ipv6 = 1"
+#     state: present
+- name: Prefer IPv4 over IPv6 in getaddrinfo config
+  become: true
+  lineinfile:
+    path: /etc/gai.conf
+    line: "precedence ::ffff:0:0/96  100"
+    insertafter: EOF
     state: present
 - name: Install AUR Helper
   aur:
     name: yay-bin
+    state: present
     #skip_installed: true
 - name: Install AUR Components
   aur:
     name:
     - fnm-bin
     - antibody-bin
-    - nerd-fonts-hack
+    state: present
 - name: Enable NetworkManager Service
   become: true
   systemd:
@@ -83,3 +98,9 @@
     name: fstrim.timer
     enabled: true
     masked: false
+- name: Set Linux Console Default Bitmap font
+  become: true
+  lineinfile:
+    path: /etc/vconsole.conf
+    line: "FONT=ter-u28n"
+    state: present
