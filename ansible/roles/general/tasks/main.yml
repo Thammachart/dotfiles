@@ -62,6 +62,7 @@
     path: /etc/sysctl.d/00-magic-sysrq.conf
     line: "kernel.sysrq = {{ magicsysrq }}"
     state: present
+    create: true
 # - name: Disable IPv6 due to timeout issue when connecting to IPv6-supported sites
 #   become: true
 #   lineinfile:
@@ -104,3 +105,25 @@
     path: /etc/vconsole.conf
     line: "FONT=ter-u28n"
     state: present
+    create: true
+- name: Set Default Locale to {{ default_locale }}
+  become: true
+  lineinfile:
+    path: /etc/locale.conf
+    line: "LANG={{ default_locale }}"
+    state: present
+    create: true
+- name: Set LANGUAGE Locale to {{ language_locales }}
+  become: true
+  lineinfile:
+    path: /etc/locale.conf
+    line: "LANGUAGE={{ language_locales }}"
+    state: present
+    create: true
+- name: Set Numeric Locale to {{ numeric_locale }}
+  become: true
+  lineinfile:
+    path: /etc/locale.conf
+    line: "LC_NUMERIC={{ numeric_locale }}"
+    state: present
+    create: true
