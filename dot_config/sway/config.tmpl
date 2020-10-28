@@ -41,12 +41,15 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+
+{{ if not (contains "PC" .chezmoi.hostname) -}}
 focus HDMI-A-1
 
 output HDMI-A-1 scale 1.25
 output eDP-1 scale 1.25
 output HDMI-A-1 res 1920x1080@60Hz pos 0 0
 output eDP-1 res 1920x1080@60Hz pos 1536 0
+{{ end -}}
 
 default_border pixel 3
 gaps inner 5
