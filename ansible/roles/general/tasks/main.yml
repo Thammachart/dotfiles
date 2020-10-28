@@ -59,7 +59,7 @@
 - name: Enable Magic SysRq = {{ magicsysrq }}
   become: true
   lineinfile:
-    path: /etc/sysctl.d/00-magic-sysrq.conf
+    path: /etc/sysctl.d/99-magic-sysrq.conf
     line: "kernel.sysrq = {{ magicsysrq }}"
     state: present
     create: true
