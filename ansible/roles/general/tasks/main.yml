@@ -30,6 +30,8 @@
     - docker-compose
     - tlp
     - terminus-font
+    - p7zip
+    - unzip
     state: present
 - name: Add groups to {{ ansible_user_id }}
   become: true
