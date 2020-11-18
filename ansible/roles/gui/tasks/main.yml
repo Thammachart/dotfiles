@@ -14,6 +14,7 @@
     - noto-fonts-cjk
     - firefox
     - firefox-developer-edition
+    - gnome-keyring
     - chromium
     - mesa
     - libva-mesa-driver
