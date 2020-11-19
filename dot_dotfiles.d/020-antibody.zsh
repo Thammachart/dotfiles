@@ -1,5 +1,6 @@
-source /home/thammachart/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-bhilburn-SLASH-powerlevel9k/powerlevel9k.zsh-theme
-fpath+=( /home/thammachart/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-bhilburn-SLASH-powerlevel9k )
+source /home/thammachart/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-powerlevel10k/powerlevel10k.zsh-theme
+source /home/thammachart/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-powerlevel10k/powerlevel9k.zsh-theme
+fpath+=( /home/thammachart/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-powerlevel10k )
 source /home/thammachart/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 fpath+=( /home/thammachart/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-syntax-highlighting )
 source /home/thammachart/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
