@@ -9,7 +9,9 @@ export CLICOLOR=1
 # export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 
-# export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+{{ if (eq .chezmoi.os "darwin") }}
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+{{ end }}
 
 export EDITOR=$(command -v nvim)
 export VISUAL=$EDITOR
@@ -28,10 +30,12 @@ alias rm='rm -i'
 alias g='git'
 
 # fnm
-eval "`fnm env`"
+eval $(fnm env)
 
+{{ if (ne .chezmoi.os "linux") }}
 # rustup
-# source $HOME/.cargo/env
+source $HOME/.cargo/env
+{{ end }}
 
 # yarn
 export PATH=$(yarn global dir)/node_modules/.bin:$PATH

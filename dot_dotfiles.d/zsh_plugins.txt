@@ -1,5 +1,5 @@
 # antibody bundle < zsh_plugins.txt > 020-antibody.zsh
-bhilburn/powerlevel9k
+romkatv/powerlevel10k
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-completions
