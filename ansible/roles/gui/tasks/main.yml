@@ -28,6 +28,7 @@
     - wofi
     - alacritty
     - xorg-server-xwayland
+    - gammastep
     - pulseaudio
     - pavucontrol
     - geany
