@@ -46,3 +46,26 @@
     - nerd-fonts-mononoki
     - nerd-fonts-jetbrains-mono
     state: present
+- name: Set GNOME Keyring at boot time of Console Login PAM (auth)
+  become: true
+  community.general.pamd:
+    name: login
+    type: auth
+    control: include
+    module_path: system-local-login
+    new_type: auth
+    new_control: optional
+    new_module_path: pam_gnome_keyring.so
+    state: after
+- name: Set GNOME Keyring at boot time of Console Login PAM (session)
+  become: true
+  community.general.pamd:
+    name: login
+    type: session
+    control: include
+    module_path: system-local-login
+    new_type: session
+    new_control: optional
+    new_module_path: pam_gnome_keyring.so
+    module_arguments: auto_start
+    state: after
