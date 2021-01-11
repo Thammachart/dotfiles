@@ -1,3 +1,4 @@
 for file in $(ls $HOME/.dotfiles.d/*.zsh | sort ); do
   source $file
 done
+
