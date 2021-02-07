@@ -33,6 +33,7 @@
     - terminus-font
     - p7zip
     - unzip
+    - acpi_call
     state: present
 - name: Add groups to {{ ansible_user_id }}
   become: true
@@ -88,7 +89,6 @@
   aur:
     name:
     - fnm-bin
-    - antibody-bin
     state: present
 - name: Enable NetworkManager Service
   become: true

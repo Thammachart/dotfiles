@@ -38,6 +38,7 @@
     - keepassxc
     - papirus-icon-theme
     - arc-gtk-theme
+    - qt5-wayland
     state: present
 - name: Install GUI-related components (AUR)
   aur:

@@ -1,5 +1,5 @@
 set -e
-antibody update
+zi update -p
 {{ if contains "microsoft" .chezmoi.kernel.osrelease -}}
 brew update && brew upgrade && sudo apt update && sudo apt full-upgrade
 {{ else if eq .chezmoi.os "linux" -}}
