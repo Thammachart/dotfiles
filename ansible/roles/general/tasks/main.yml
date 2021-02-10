@@ -26,6 +26,7 @@
     - java-runtime-common
     - java-environment-common
     - yarn
+    - go
     - rustup
     - docker
     - docker-compose
