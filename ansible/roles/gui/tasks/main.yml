@@ -27,6 +27,7 @@
     - xdg-desktop-portal-wlr
     - wofi
     - alacritty
+    - kitty
     - xorg-server-xwayland
     - gammastep
     - pulseaudio
