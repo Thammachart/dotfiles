@@ -6,7 +6,14 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
+    "modules-right": [
+        "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", 
+        {{ if not (contains "PC" .chezmoi.hostname) -}}
+        "backlight", 
+        "battery", 
+        {{ end -}}
+        "clock", "tray"
+    ],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -101,9 +108,6 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
