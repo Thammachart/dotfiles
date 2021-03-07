@@ -44,7 +44,6 @@
   aur:
     name:
     - nerd-fonts-hack
-    - nerd-fonts-mononoki
     - nerd-fonts-jetbrains-mono
     - ant-dracula-gtk-theme
     state: present
