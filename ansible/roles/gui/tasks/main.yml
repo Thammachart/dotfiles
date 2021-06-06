@@ -43,6 +43,7 @@
 - name: Install GUI-related components (AUR)
   aur:
     name:
+    - fonts-tlwg
     - nerd-fonts-hack
     - nerd-fonts-jetbrains-mono
     - ant-dracula-gtk-theme
