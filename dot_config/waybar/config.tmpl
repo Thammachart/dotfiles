@@ -12,7 +12,7 @@
         "backlight", 
         "battery", 
         {{ end -}}
-        "clock", "tray"
+        "clock", "tray", "custom/power"
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -135,6 +135,7 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    }
+    },
+    "custom/power":{ "format": "", "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Suspend' 'swaymsg exec systemctl suspend' -b 'Reboot' 'systemctl reboot' -b 'Shutdown' 'systemctl poweroff'" }
 }
 
