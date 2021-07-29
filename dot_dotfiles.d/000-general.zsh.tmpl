@@ -37,6 +37,8 @@ eval $(fnm env)
 {{ if (ne .chezmoi.os "linux") }}
 # rustup
 source $HOME/.cargo/env
+{{ else }}
+export PATH=$HOME/.cargo/bin:$PATH
 {{ end }}
 
 # yarn
