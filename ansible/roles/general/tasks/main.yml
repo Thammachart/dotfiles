@@ -19,10 +19,21 @@
     - bashtop
     - openssh
     - networkmanager
-    - iwd
-    - ldns
     - zsh
     - lsd
+
+    ## Modern Unix
+    - bat
+    - duf
+
+    ## Network Tools
+    - iwd
+    - ldns
+    - nmap
+    - gping
+    - dog
+    - traceroute
+
     - java-runtime-common
     - java-environment-common
     - yarn
