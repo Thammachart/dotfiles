@@ -46,6 +46,7 @@
     - fonts-tlwg
     - nerd-fonts-hack
     - nerd-fonts-jetbrains-mono
+    - nerd-fonts-fira-code
     - ant-dracula-gtk-theme
     state: present
 - name: Set GNOME Keyring at boot time of Console Login PAM (auth)

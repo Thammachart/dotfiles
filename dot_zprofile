@@ -1,5 +1,8 @@
 if [[ -z $DISPLAY && $(tty) == /dev/tty1 && $XDG_SESSION_TYPE == tty ]]; then
-  export MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland
+  # Evaluate Env Vars from ~/environment.d/*.conf
+  while read -r l; do
+    eval export $l
+  done < <(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
 
   ## GNOME
   #exec dbus-run-session gnome-session
