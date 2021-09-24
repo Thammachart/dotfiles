@@ -113,6 +113,7 @@
   aur:
     name:
     - fnm-bin
+    - jdk11-adoptopenjdk
     state: present
 - name: Enable NetworkManager Service
   become: true
