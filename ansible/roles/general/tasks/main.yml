@@ -13,7 +13,7 @@
     - python
     - python-pip
     - python-psutil
-    - man
+    - man-db
     - tmux
     - htop
     - bashtop
@@ -106,6 +106,14 @@
   become: true
   systemd:
     name: NetworkManager
+    state: started
+    enabled: true
+    masked: false
+- name: Enable systemd-resolved Service
+  become: true
+  systemd:
+    name: systemd-resolved
+    state: started
     enabled: true
     masked: false
 - name: Enable fstrim Timer
@@ -142,3 +150,10 @@
     line: "LC_NUMERIC={{ numeric_locale }}"
     state: present
     create: true
+- name: systemd-resolved /etc/resolv.conf symlink
+  become: true
+  file:
+    src: /run/systemd/resolve/stub-resolv.conf
+    dest: /etc/resolv.conf
+    state: link
+    force: true
