@@ -8,9 +8,9 @@
     </test>
 
     <edit name="family" mode="prepend" binding="strong">
-      <string>Noto Sans</string>
-      <string>Loma</string>
-      <string>Waree</string>
+      <string>{{ .linux.fonts.latin.sans }}</string>
+      <string>Liberation Sans</string>
+      <string>{{ .linux.fonts.thai.sans }}</string>
     </edit>
   </match>
 
@@ -20,9 +20,9 @@
     </test>
 
     <edit name="family" mode="prepend" binding="strong">
-      <string>Noto Serif</string>
-      <string>Kinnari</string>
-      <string>Noto Serif Thai</string>
+      <string>{{ .linux.fonts.latin.serif }}</string>
+      <string>Liberation Serif</string>
+      <string>{{ .linux.fonts.thai.serif }}</string>
     </edit>
   </match>
 
@@ -32,10 +32,22 @@
     </test>
 
     <edit name="family" mode="prepend" binding="strong">
-      <string>Hack</string>
-      <string>Noto Sans Mono</string>
+      <string>{{ .linux.fonts.latin.monospace }}</string>
       <string>Liberation Mono</string>
-      <string>TlwgTypo</string>
+      <string>{{ .linux.fonts.thai.monospace }}</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test qual="any" name="family">
+      <string>ui-monospace</string>
+    </test>
+
+    <edit name="family" mode="prepend" binding="strong">
+      <string>{{ .linux.fonts.latin.ui_monospace }}</string>
+      <string>Hack</string>
+      <string>Liberation Mono</string>
+      <string>{{default ".linux.fonts.thai.ui_monospace" .linux.fonts.thai.monospace }}</string>
     </edit>
   </match>
 
@@ -45,9 +57,8 @@
     </test>
 
     <edit name="family" mode="prepend" binding="strong">
-      <string>Inter</string>
+      <string>{{ .linux.fonts.latin.ui }}</string>
       <string>Ubuntu</string>
-      <string>Source Sans Pro</string>
       <string>Liberation Sans</string>
     </edit>
   </match>

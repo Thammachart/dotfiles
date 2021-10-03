@@ -7,8 +7,11 @@
     - ttf-jetbrains-mono
     - ttf-cascadia-code
     - ttf-liberation
+    - ttf-ibm-plex
     - ttf-ubuntu-font-family
     - ttf-fira-code
+    - ttc-iosevka
+    - ttc-iosevka-ss05
     - inter-font
     - noto-fonts
     - noto-fonts-cjk
@@ -46,7 +49,6 @@
     - fonts-tlwg
     - nerd-fonts-hack
     - nerd-fonts-jetbrains-mono
-    - nerd-fonts-fira-code
     - ant-dracula-gtk-theme
     - vscodium-bin
     state: present
