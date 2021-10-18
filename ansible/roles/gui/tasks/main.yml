@@ -10,7 +10,6 @@
     - ttf-ibm-plex
     - ttf-ubuntu-font-family
     - ttf-fira-code
-    - ttc-iosevka
     - ttc-iosevka-ss05
     - inter-font
     - noto-fonts
@@ -29,7 +28,6 @@
     - xdg-desktop-portal-wlr
     - wofi
     - alacritty
-    - kitty
     - xorg-xwayland
     - gammastep
     - pulseaudio

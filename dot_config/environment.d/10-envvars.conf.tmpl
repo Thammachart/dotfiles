@@ -4,3 +4,8 @@ QT_QPA_PLATFORM=wayland
 
 # Go
 GOPATH={{ .chezmoi.homeDir }}/.local/go-tools
+
+# Java
+{{ if (eq .chezmoi.osRelease.id "arch") -}}
+JAVA_HOME=/usr/lib/jvm/default
+{{ end -}}

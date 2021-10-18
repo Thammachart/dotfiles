@@ -1,3 +1,4 @@
+{{ if (eq .chezmoi.os "linux") -}}
 if [[ -z $DISPLAY && $(tty) == /dev/tty1 && $XDG_SESSION_TYPE == tty ]]; then
   # Evaluate Env Vars from ~/environment.d/*.conf
   while read -r l; do
@@ -14,3 +15,4 @@ if [[ -z $DISPLAY && $(tty) == /dev/tty1 && $XDG_SESSION_TYPE == tty ]]; then
   ## KDE
   #dbus-run-session startplasma-wayland
 fi
+{{ end -}}
