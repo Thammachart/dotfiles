@@ -4,7 +4,7 @@ sans = "Noto Sans Display"
 serif = "Noto Serif"
 monospace = "JetBrains Mono NL"
 ui_monospace = "JetBrains Mono NL"
-terminal_monospace = "JetBrainsMono Nerd Font"
+terminal_monospace = "Cascadia Mono"
 
 [linux.fonts.thai]
 sans = "Loma"
