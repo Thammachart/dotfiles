@@ -9,6 +9,8 @@
     - ttf-liberation
     - ttf-ibm-plex
     - ttf-ubuntu-font-family
+    - adobe-source-serif-fonts
+    - ttf-fira-sans
     - ttf-fira-code
     - ttc-iosevka-ss05
     - inter-font
@@ -30,6 +32,7 @@
     - alacritty
     - xorg-xwayland
     - gammastep
+    - kanshi
     - pulseaudio
     - pavucontrol
     - geany
@@ -40,6 +43,7 @@
     - papirus-icon-theme
     - arc-gtk-theme
     - qt5-wayland
+    - qt5ct
     state: present
 - name: Install GUI-related components (AUR)
   aur:
