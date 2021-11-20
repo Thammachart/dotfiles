@@ -12,12 +12,11 @@
     - adobe-source-serif-fonts
     - ttf-fira-sans
     - ttf-fira-code
-    - ttc-iosevka-ss05
     - inter-font
     - noto-fonts
     - noto-fonts-cjk
-    - firefox
     - gnome-keyring
+    - firefox
     - chromium
     - mesa
     - libva-mesa-driver
