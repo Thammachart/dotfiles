@@ -105,12 +105,12 @@
     insertafter: EOF
     state: present
 - name: Install AUR Helper
-  aur:
+  kewlfft.aur.aur:
     name: yay-bin
     state: present
     #skip_installed: true
 - name: Install AUR Components
-  aur:
+  kewlfft.aur.aur:
     name:
     - fnm-bin
     - jdk11-adoptopenjdk

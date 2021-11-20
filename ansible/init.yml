@@ -1,7 +1,6 @@
 - name: Setup local workstation
   hosts: local
   roles:
-  - kewlfft.aur
   - general
   - zsh
   - ssh
