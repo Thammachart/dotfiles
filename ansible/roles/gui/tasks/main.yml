@@ -46,7 +46,7 @@
     - qt5ct
     state: present
 - name: Install GUI-related components (AUR)
-  aur:
+  kewlfft.aur.aur:
     name:
     - fonts-tlwg
     - nerd-fonts-hack
