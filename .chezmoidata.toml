@@ -8,5 +8,5 @@ terminal_monospace = "Cascadia Mono"
 
 [linux.fonts.thai]
 sans = "Loma"
-serif = "Kinnari"
+serif = "Noto Serif Thai"
 monospace = "Tlwg Typo"

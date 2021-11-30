@@ -1,5 +1,13 @@
 setopt HIST_IGNORE_SPACE
 setopt EXTENDED_HISTORY
+
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+
 HISTFILE=$ZDOTDIR/.zsh_history
 HISTSIZE=9999
 SAVEHIST=$HISTSIZE
@@ -32,7 +40,7 @@ alias g='git'
 alias tf='terraform'
 
 # fnm
-eval $(fnm env)
+# eval $(fnm env)
 
 {{ if (ne .chezmoi.os "linux") }}
 # rustup
@@ -42,4 +50,4 @@ export PATH=$HOME/.cargo/bin:$PATH
 {{ end }}
 
 # yarn
-export PATH=$(yarn global dir)/node_modules/.bin:$PATH
+export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH

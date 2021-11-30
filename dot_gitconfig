@@ -3,3 +3,5 @@
 [user]
 	name = Thammachart
 	useConfigOnly = true
+[pull]
+	rebase = false
