@@ -33,7 +33,8 @@
     - xorg-xwayland
     - gammastep
     - kanshi
-    - pulseaudio
+    - pipewire
+    - pipewire-pulse
     - pavucontrol
     - geany
     - code
@@ -44,6 +45,7 @@
     - arc-gtk-theme
     - qt5-wayland
     - qt5ct
+    - gnome-keyring
     state: present
 - name: Install GUI-related components (AUR)
   kewlfft.aur.aur:
@@ -51,8 +53,9 @@
     - fonts-tlwg
     - nerd-fonts-hack
     - nerd-fonts-jetbrains-mono
-    - ant-dracula-gtk-theme
     - vscodium-bin
+    - greetd
+    - greetd-gtkgreet
     state: present
 - name: Set GNOME Keyring at boot time of Console Login PAM (auth)
   become: true
@@ -77,8 +80,67 @@
     new_module_path: pam_gnome_keyring.so
     module_arguments: auto_start
     state: after
+- name: Set GNOME Keyring at boot time of greetd PAM (auth)
+  become: true
+  community.general.pamd:
+    name: greetd
+    type: auth
+    control: include
+    module_path: system-local-login
+    new_type: auth
+    new_control: optional
+    new_module_path: pam_gnome_keyring.so
+    state: after
+- name: Set GNOME Keyring at boot time of greetd PAM (session)
+  become: true
+  community.general.pamd:
+    name: greetd
+    type: session
+    control: include
+    module_path: system-local-login
+    new_type: session
+    new_control: optional
+    new_module_path: pam_gnome_keyring.so
+    module_arguments: auto_start
+    state: after
+- name: Create {{ wayland_enablement_path }}
+  become: true
+  template:
+    src: wayland-enablement.sh.j2
+    dest: '{{ wayland_enablement_path }}'
+- name: Create {{ load_systemd_envs_path }}
+  become: true
+  template:
+    src: load-systemd-envs.sh.j2
+    dest: '{{ load_systemd_envs_path }}'
+- name: Create {{ sway_run_path }}
+  become: true
+  template:
+    src: sway-run.sh.j2
+    dest: '{{ sway_run_path }}'
+    mode: 0755
+- name: Create greetd Config file
+  become: true
+  template:
+    src: greetd-config.toml.j2
+    dest: '/etc/greetd/config.toml'
+- name: Create greetd gtkgreet-sway Config file
+  become: true
+  template:
+    src: greetd-gtkgreet-sway-config.j2
+    dest: '{{ gtkgreet_sway_config }}'
+- name: Create greetd Config file
+  become: true
+  template:
+    src: greetd-config.toml.j2
+    dest: '/etc/greetd/config.toml'
+- name: Create greetd session file
+  become: true
+  template:
+    src: greetd-environments.j2
+    dest: '/etc/greetd/environments'
 - name: Create Sway Custom Desktop Session
   become: true
   template:
-    src: sway_custom.j2
+    src: sway-custom-desktop-entry.j2
     dest: /usr/share/wayland-sessions/sway-custom.desktop
