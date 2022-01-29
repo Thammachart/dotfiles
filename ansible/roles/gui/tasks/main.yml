@@ -103,44 +103,25 @@
     new_module_path: pam_gnome_keyring.so
     module_arguments: auto_start
     state: after
-- name: Create {{ wayland_enablement_path }}
+- name: Create SwayWM Launcher
   become: true
   template:
-    src: wayland-enablement.sh.j2
-    dest: '{{ wayland_enablement_path }}'
-- name: Create {{ load_systemd_envs_path }}
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    mode: '{{ item.mode|default ("644") }}'
+  with_items:
+    - { src: 'wayland-enablement.sh.j2', dest: '{{ wayland_enablement_path }}' }
+    - { src: 'load-systemd-envs.sh.j2', dest: '{{ load_systemd_envs_path }}' }
+    - { src: 'launch-sway.j2', dest: '{{ sway_launcher_path }}', mode: '755' }
+- name: Create & Configure greetd
   become: true
   template:
-    src: load-systemd-envs.sh.j2
-    dest: '{{ load_systemd_envs_path }}'
-- name: Create {{ sway_run_path }}
-  become: true
-  template:
-    src: sway-run.sh.j2
-    dest: '{{ sway_run_path }}'
-    mode: 0755
-- name: Create greetd Config file
-  become: true
-  template:
-    src: greetd-config.toml.j2
-    dest: '/etc/greetd/config.toml'
-- name: Create greetd gtkgreet-sway Config file
-  become: true
-  template:
-    src: greetd-gtkgreet-sway-config.j2
-    dest: '{{ gtkgreet_sway_config }}'
-- name: Create greetd Config file
-  become: true
-  template:
-    src: greetd-config.toml.j2
-    dest: '/etc/greetd/config.toml'
-- name: Create greetd session file
-  become: true
-  template:
-    src: greetd-environments.j2
-    dest: '/etc/greetd/environments'
-- name: Create Sway Custom Desktop Session
-  become: true
-  template:
-    src: sway-custom-desktop-entry.j2
-    dest: /usr/share/wayland-sessions/sway-custom.desktop
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    mode: '{{ item.mode|default ("644") }}'
+  with_items:
+    - { src: 'greetd-config.toml.j2', dest: '/etc/greetd/config.toml' }
+    - { src: 'greetd-gtkgreet-sway-config.j2', dest: '{{ gtkgreet_sway_config }}' }
+    - { src: 'greetd-config.toml.j2', dest: '/etc/greetd/config.toml' }
+    - { src: 'greetd-environments.j2', dest: '/etc/greetd/environments' }
+    - { src: 'sway-custom-desktop-entry.j2', dest: '/usr/share/wayland-sessions/sway-custom.desktop' }

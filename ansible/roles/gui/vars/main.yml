@@ -2,4 +2,4 @@
   gtkgreet_sway_config: '/etc/greetd/sway-config'
   wayland_enablement_path: '/usr/local/bin/wayland-enablement.sh'
   load_systemd_envs_path: '/usr/local/bin/load-systemd-envs.sh'
-  sway_run_path: '/usr/local/bin/sway-run'
+  sway_launcher_path: '/usr/local/bin/launch-sway'
