@@ -5,3 +5,6 @@ GOPATH={{ .chezmoi.homeDir }}/.local/go-tools
 {{ if (eq .chezmoi.osRelease.id "arch") -}}
 JAVA_HOME=/usr/lib/jvm/default
 {{ end -}}
+
+# Pulumi
+PULUMI_HOME=/mnt/data/.pulumi
