@@ -1,6 +1,6 @@
 [linux.fonts.latin]
-ui = "Fira Sans"
-sans = "Fira Sans"
+ui = "Inter"
+sans = "Inter"
 serif = "Source Serif Pro"
 monospace = "JetBrains Mono NL"
 ui_monospace = "JetBrains Mono NL"
