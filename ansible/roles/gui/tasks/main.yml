@@ -16,6 +16,8 @@
     - noto-fonts
     - noto-fonts-cjk
     - gnome-keyring
+    - nautilus
+    - evince
     - firefox
     - chromium
     - mesa
@@ -45,7 +47,6 @@
     - arc-gtk-theme
     - qt5-wayland
     - qt5ct
-    - gnome-keyring
     state: present
 - name: Install GUI-related components (AUR)
   kewlfft.aur.aur:
