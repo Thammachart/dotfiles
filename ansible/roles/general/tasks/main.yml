@@ -113,7 +113,7 @@
   kewlfft.aur.aur:
     name:
     - fnm-bin
-    - jdk11-adoptopenjdk
+    - jdk11-temurin
     state: present
 - name: Enable NetworkManager Service
   become: true
