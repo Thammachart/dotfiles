@@ -1,5 +1,7 @@
 ---
-  gtkgreet_sway_config: '/etc/greetd/sway-config'
+  gtkgreet_sway_config: '/etc/greetd/gtkgreet-sway-config'
+  qtgreet_sway_config: '/etc/greetd/qtgreet-sway-config'
   wayland_enablement_path: '/usr/local/bin/wayland-enablement.sh'
   load_systemd_envs_path: '/usr/local/bin/load-systemd-envs.sh'
   sway_launcher_path: '/usr/local/bin/launch-sway'
+  kde_launcher_path: '/usr/local/bin/launch-kde'

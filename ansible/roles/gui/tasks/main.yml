@@ -3,60 +3,61 @@
   become: true
   package:
     name:
-    - ttf-hack
-    - ttf-jetbrains-mono
-    - ttf-cascadia-code
-    - ttf-liberation
-    - ttf-ibm-plex
-    - ttf-ubuntu-font-family
-    - adobe-source-serif-fonts
-    - ttf-fira-sans
-    - ttf-fira-code
-    - inter-font
-    - noto-fonts
-    - noto-fonts-cjk
-    - gnome-keyring
-    - nautilus
-    - evince
-    - firefox
-    - chromium
-    - mesa
-    - libva-mesa-driver
-    - libva-utils
-    - sway
-    - swayidle
-    - swaylock
-    - waybar
-    - mako
-    - xdg-desktop-portal-wlr
-    - wofi
-    - alacritty
-    - tilix
-    - xorg-xwayland
-    - gammastep
-    - kanshi
-    - pipewire
-    - pipewire-pulse
-    - pavucontrol
-    - geany
-    - code
-    - libnotify
-    - syncthing
-    - keepassxc
-    - papirus-icon-theme
-    - arc-gtk-theme
-    - qt5-wayland
-    - qt5ct
+      - ttf-hack
+      - ttf-jetbrains-mono
+      - ttf-cascadia-code
+      - ttf-liberation
+      - ttf-ibm-plex
+      - ttf-ubuntu-font-family
+      - adobe-source-serif-fonts
+      - ttf-fira-sans
+      - ttf-fira-code
+      - inter-font
+      - noto-fonts
+      - noto-fonts-cjk
+      - gnome-keyring
+      - nautilus
+      - evince
+      - firefox
+      - chromium
+      - mesa
+      - libva-mesa-driver
+      - libva-utils
+      - sway
+      - swayidle
+      - swaylock
+      - waybar
+      - mako
+      - xdg-desktop-portal-wlr
+      - wofi
+      - alacritty
+      - tilix
+      - xorg-xwayland
+      - gammastep
+      - kanshi
+      - pipewire
+      - pipewire-pulse
+      - pavucontrol
+      - geany
+      - code
+      - libnotify
+      - syncthing
+      - keepassxc
+      - papirus-icon-theme
+      - arc-gtk-theme
+      - qt5-wayland
+      - qt5ct
     state: present
 - name: Install GUI-related components (AUR)
   kewlfft.aur.aur:
     name:
-    - fonts-tlwg
-    - nerd-fonts-hack
-    - nerd-fonts-jetbrains-mono
-    - vscodium-bin
-    - greetd
-    - greetd-gtkgreet
+      - fonts-tlwg
+      - nerd-fonts-hack
+      - nerd-fonts-jetbrains-mono
+      - vscodium-bin
+      - greetd
+      - greetd-gtkgreet
+      - greetd-qtgreet
     state: present
 - name: Set GNOME Keyring at boot time of Console Login PAM (auth)
   become: true
@@ -104,25 +105,36 @@
     new_module_path: pam_gnome_keyring.so
     module_arguments: auto_start
     state: after
-- name: Create SwayWM Launcher
+- name: Create Wayland Launchers for greetd
   become: true
   template:
-    src: '{{ item.src }}'
-    dest: '{{ item.dest }}'
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
     mode: '{{ item.mode|default ("644") }}'
   with_items:
-    - { src: 'wayland-enablement.sh.j2', dest: '{{ wayland_enablement_path }}' }
-    - { src: 'load-systemd-envs.sh.j2', dest: '{{ load_systemd_envs_path }}' }
-    - { src: 'launch-sway.j2', dest: '{{ sway_launcher_path }}', mode: '755' }
+    - { src: "wayland-enablement.sh.j2", dest: "{{ wayland_enablement_path }}" }
+    - { src: "load-systemd-envs.sh.j2", dest: "{{ load_systemd_envs_path }}" }
+    - { src: "launch-sway.j2", dest: "{{ sway_launcher_path }}", mode: "755" }
+    - { src: "launch-kde.j2", dest: "{{ kde_launcher_path }}", mode: "755" }
 - name: Create & Configure greetd
   become: true
   template:
-    src: '{{ item.src }}'
-    dest: '{{ item.dest }}'
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
     mode: '{{ item.mode|default ("644") }}'
   with_items:
-    - { src: 'greetd-config.toml.j2', dest: '/etc/greetd/config.toml' }
-    - { src: 'greetd-gtkgreet-sway-config.j2', dest: '{{ gtkgreet_sway_config }}' }
-    - { src: 'greetd-config.toml.j2', dest: '/etc/greetd/config.toml' }
-    - { src: 'greetd-environments.j2', dest: '/etc/greetd/environments' }
-    - { src: 'sway-custom-desktop-entry.j2', dest: '/usr/share/wayland-sessions/sway-custom.desktop' }
+    - { src: "greetd-config.toml.j2", dest: "/etc/greetd/config.toml" }
+    - {
+        src: "greetd-gtkgreet-sway-config.j2",
+        dest: "{{ gtkgreet_sway_config }}",
+      }
+    - {
+        src: "greetd-qtgreet-sway-config.j2",
+        dest: "{{ qtgreet_sway_config }}",
+      }
+    - { src: "greetd-config.toml.j2", dest: "/etc/greetd/config.toml" }
+    - { src: "greetd-environments.j2", dest: "/etc/greetd/environments" }
+    - {
+        src: "sway-custom-desktop-entry.j2",
+        dest: "/usr/share/wayland-sessions/sway-custom.desktop",
+      }
