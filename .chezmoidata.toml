@@ -1,7 +1,7 @@
 [linux.fonts.latin]
-ui = "Fira Sans"
-sans = "Fira Sans"
-serif = "Source Serif Pro"
+ui = "Roboto"
+sans = "Roboto"
+serif = "Roboto Serif"
 monospace = "JetBrains Mono NL"
 ui_monospace = "JetBrains Mono NL"
 terminal_monospace = "Cascadia Mono"
