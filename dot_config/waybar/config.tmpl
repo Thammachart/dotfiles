@@ -1,13 +1,13 @@
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 24, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
+    // "layer": "top",
+    // "position": "bottom",
+    "height": 24,
+    // "width": 1280,
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": [
-        "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", 
+        "idle_inhibitor", "pulseaudio", "network", "sway/language", "cpu", "memory", "temperature", 
         {{ if not (contains "PC" .chezmoi.hostname) -}}
         "backlight", 
         "battery", 
@@ -32,32 +32,6 @@
     // },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -136,6 +110,9 @@
         },
         "on-click": "pavucontrol"
     },
+    "sway/language": {
+        "format": "{}",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+    },
     "custom/power":{ "format": "", "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Suspend' 'swaymsg exec systemctl suspend' -b 'Reboot' 'systemctl reboot' -b 'Shutdown' 'systemctl poweroff'" }
 }
-
