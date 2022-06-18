@@ -1,4 +1,0 @@
-Host vs-ssh.visualstudio.com
-  HostName vs-ssh.visualstudio.com
-  User shobshop
-  IdentityFile ~/.ssh/id_rsa_shobshop

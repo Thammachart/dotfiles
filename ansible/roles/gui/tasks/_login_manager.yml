@@ -1,0 +1,34 @@
+---
+- name: Create Wayland Launchers for greetd
+  become: true
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: '{{ item.mode|default ("644") }}'
+  with_items:
+    - { src: "wayland-enablement.sh.j2", dest: "{{ wayland_enablement_path }}" }
+    - { src: "load-systemd-envs.sh.j2", dest: "{{ load_systemd_envs_path }}" }
+    - { src: "launch-sway.j2", dest: "{{ sway_launcher_path }}", mode: "755" }
+    - { src: "launch-kde.j2", dest: "{{ kde_launcher_path }}", mode: "755" }
+- name: Create & Configure greetd
+  become: true
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: '{{ item.mode|default ("644") }}'
+  with_items:
+    - { src: "greetd-config.toml.j2", dest: "/etc/greetd/config.toml" }
+    - {
+        src: "greetd-gtkgreet-sway-config.j2",
+        dest: "{{ gtkgreet_sway_config }}",
+      }
+    - {
+        src: "greetd-qtgreet-sway-config.j2",
+        dest: "{{ qtgreet_sway_config }}",
+      }
+    - { src: "greetd-config.toml.j2", dest: "/etc/greetd/config.toml" }
+    - { src: "greetd-environments.j2", dest: "/etc/greetd/environments" }
+    - {
+        src: "sway-custom-desktop-entry.j2",
+        dest: "/usr/share/wayland-sessions/sway-custom.desktop",
+      }

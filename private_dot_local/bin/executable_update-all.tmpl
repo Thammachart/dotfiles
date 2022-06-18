@@ -1,8 +1,6 @@
 set -e
-zimfw upgrade -v
-zimfw update -v
 {{ if contains "microsoft" .chezmoi.kernel.osrelease -}}
 brew update && brew upgrade && sudo apt update && sudo apt full-upgrade
 {{ else if eq .chezmoi.os "linux" -}}
-yay --noconfirm && gcloud components update -q
+yay --noconfirm
 {{ end -}}

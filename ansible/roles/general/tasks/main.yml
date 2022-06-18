@@ -3,87 +3,60 @@
   become: true
   package:
     name:
-    - sudo
-    - opendoas
-    - curl
-    - wget
-    - vim
-    - ripgrep
-    - neovim
-    - base-devel
-    - python
-    - python-pip
-    - python-psutil
-    - man-db
-    - tmux
-    - htop
-    - bashtop
-    - openssh
-    - networkmanager
-    - zsh
-    - lsd
+      - sudo
+      - opendoas
+      - curl
+      - curlie
+      - wget
+      - vim
+      - ripgrep
+      - neovim
+      - base-devel
+      - python
+      - python-pip
+      - python-psutil
+      - man-db
+      - tmux
+      - htop
+      - bashtop
+      - openssh
+      - zsh
+      - lsd
 
-    ## Modern Unix
-    - bat
-    - duf
+      ## Modern Unix
+      - bat
+      - duf
 
-    ## Network Tools
-    - iwd
-    - ldns
-    - nmap
-    - gping
-    - dog
-    - traceroute
+      ## Network Tools
+      - networkmanager
+      - iwd
+      - ldns
+      - nmap
+      - gping
+      - dog
+      - traceroute
 
-    - java-runtime-common
-    - java-environment-common
-    - yarn
-    - go
-    - rustup
-    - docker
-    - docker-compose
-    - tlp
-    - terminus-font
-    - p7zip
-    - unzip
-    - acpi_call
+      - java-runtime-common
+      - java-environment-common
+      - go
+      - rustup
+      - nodejs
+      - yarn
+      - docker
+      - docker-compose
+      - tlp
+      - terminus-font
+      - p7zip
+      - unzip
+      - acpi_call
     state: present
-- name: Add groups to {{ ansible_user_id }}
-  become: true
-  user:
-    name: "{{ ansible_user_id }}"
-    groups:
-    - "{{ superuser_group }}"
-    - docker
-    - video
-    append: true
-- name: Register {{ superuser_group }} group to sudoers.d
-  become: true
-  lineinfile:
-    path: /etc/sudoers.d/00-{{ superuser_group }}-group
-    line: "%{{ superuser_group }} ALL=(ALL) NOPASSWD: ALL"
-    state: present
-    mode: 0440
-    create: true
-    validate: "visudo -cf %s"
-- name: Include sudoers.d if not present
-  become: true
-  lineinfile:
-    path: /etc/sudoers
-    line: "#includedir /etc/sudoers.d"
-    state: present
-    validate: "visudo -cf %s"
-- name: Configure opendoas
-  become: true
-  lineinfile:
-    path: /etc/doas.conf
-    line: "permit nopass :{{ superuser_group }}"
-    state: present
-    owner: root
-    group: root
-    mode: 0400
-    create: true
-    validate: "doas -C %s"
+
+- name: Import Privileges Tasks
+  import_tasks: _privileges.yml
+
+- name: Import Network Tasks
+  import_tasks: _network.yml
+
 - name: Enable Magic SysRq = {{ magicsysrq }}
   become: true
   lineinfile:
@@ -91,19 +64,6 @@
     line: "kernel.sysrq = {{ magicsysrq }}"
     state: present
     create: true
-# - name: Disable IPv6 due to timeout issue when connecting to IPv6-supported sites
-#   become: true
-#   lineinfile:
-#     path: /etc/sysctl.d/40-ipv6.conf
-#     line: "net.ipv6.conf.all.disable_ipv6 = 1"
-#     state: present
-- name: Prefer IPv4 over IPv6 in getaddrinfo config
-  become: true
-  lineinfile:
-    path: /etc/gai.conf
-    line: "precedence ::ffff:0:0/96  100"
-    insertafter: EOF
-    state: present
 - name: Install AUR Helper
   kewlfft.aur.aur:
     name: yay-bin
@@ -112,23 +72,9 @@
 - name: Install AUR Components
   kewlfft.aur.aur:
     name:
-    - fnm-bin
-    - jdk11-temurin
+      - fnm-bin
+      - jdk11-temurin
     state: present
-- name: Enable NetworkManager Service
-  become: true
-  systemd:
-    name: NetworkManager
-    state: started
-    enabled: true
-    masked: false
-- name: Enable systemd-resolved Service
-  become: true
-  systemd:
-    name: systemd-resolved
-    state: started
-    enabled: true
-    masked: false
 - name: Enable fstrim Timer
   become: true
   systemd:
@@ -154,10 +100,12 @@
     "LANG": "{{ default_locale }}"
     "LANGUAGE": "{{ language_locales }}"
     "LC_NUMERIC": "{{ numeric_locale }}"
-- name: systemd-resolved /etc/resolv.conf symlink
-  become: true
-  file:
-    src: /run/systemd/resolve/stub-resolv.conf
-    dest: /etc/resolv.conf
-    state: link
-    force: true
+
+- name: Ensure Rustup Stable Toolchain is installed
+  shell: rustup install stable
+
+- name: Import Zsh Tasks
+  import_tasks: _zsh.yml
+
+- name: Import SSH Tasks
+  import_tasks: _ssh.yml

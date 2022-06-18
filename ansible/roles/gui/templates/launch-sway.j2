@@ -1,10 +1,10 @@
 #!/bin/sh
 
+source {{ wayland_enablement_path }}
+source {{ load_systemd_envs_path }}
+
 export XDG_SESSION_DESKTOP=sway
 export XDG_CURRENT_DESKTOP=sway
 export QT_QPA_PLATFORMTHEME=qt5ct
-
-source {{ wayland_enablement_path }}
-source {{ load_systemd_envs_path }}
 
 exec systemd-cat --identifier=sway sway $@

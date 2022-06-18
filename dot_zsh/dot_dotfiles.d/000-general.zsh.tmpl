@@ -36,11 +36,14 @@ alias ll='ls -al'
 alias lt='ls --tree'
 alias rm='rm -i'
 alias g='git'
+alias dc='docker compose'
 
 alias tf='terraform'
 
+{{ if contains "Work" .chezmoi.hostname -}}
 # fnm
-# eval $(fnm env)
+eval $(fnm env)
+{{ end -}}
 
 {{ if (ne .chezmoi.os "linux") }}
 # rustup

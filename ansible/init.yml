@@ -1,7 +1,5 @@
 - name: Setup local workstation
   hosts: local
   roles:
-  - general
-  - zsh
-  - ssh
-  - gui
+    - general
+    - gui
