@@ -1,6 +1,6 @@
 daemonize
 show-keyboard-layout
 indicator-caps-lock
-# color=3FBF7F
+indicator-idle-visible
 color=00766c
 font=Cascadia Mono
