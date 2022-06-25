@@ -1,7 +1,7 @@
 set -e
 
 PAR=$1
-BTRFS_O=noatime,commit=120,compress=zstd:1,space_cache
+BTRFS_O=noatime,commit=120,compress=zstd:1
 
 mkfs.btrfs -L arch $PAR
 
