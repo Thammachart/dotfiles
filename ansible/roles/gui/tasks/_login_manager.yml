@@ -10,6 +10,7 @@
     - { src: "load-systemd-envs.sh.j2", dest: "{{ load_systemd_envs_path }}" }
     - { src: "launch-sway.j2", dest: "{{ sway_launcher_path }}", mode: "755" }
     - { src: "launch-kde.j2", dest: "{{ kde_launcher_path }}", mode: "755" }
+    - { src: "launch-gnome.j2", dest: "{{ gnome_launcher_path }}", mode: "755" }
 - name: Create & Configure greetd
   become: true
   template:
@@ -31,4 +32,8 @@
     - {
         src: "sway-custom-desktop-entry.j2",
         dest: "/usr/share/wayland-sessions/sway-custom.desktop",
+      }
+    - {
+        src: "gnome-custom-desktop-entry.j2",
+        dest: "/usr/share/wayland-sessions/gnome-custom.desktop",
       }

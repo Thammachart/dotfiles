@@ -1,0 +1,10 @@
+#!/bin/sh
+
+source {{ wayland_enablement_path }}
+source {{ load_systemd_envs_path }}
+
+export XDG_SESSION_DESKTOP=gnome
+export XDG_CURRENT_DESKTOP=GNOME
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+exec systemd-cat --identifier=gnome gnome-session $@
