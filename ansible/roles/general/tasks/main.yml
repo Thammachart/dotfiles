@@ -5,6 +5,7 @@
     name:
       - sudo
       - opendoas
+      - btrfs-progs
       - curl
       - curlie
       - wget
