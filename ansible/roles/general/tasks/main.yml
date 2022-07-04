@@ -50,6 +50,7 @@
       - p7zip
       - unzip
       - acpi_call
+      - lshw
     state: present
 
 - name: Import Privileges Tasks

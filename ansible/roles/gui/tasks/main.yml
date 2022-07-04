@@ -24,6 +24,7 @@
       - mesa
       - libva-mesa-driver
       - libva-utils
+      - vulkan-icd-loader
       - sway
       - swayidle
       - swaylock
