@@ -62,6 +62,8 @@
       - vscodium-bin
       - greetd
       - greetd-gtkgreet
+      - nwg-look-bin
+      - nwg-displays
     state: present
 
 - name: Import PAM Tasks
