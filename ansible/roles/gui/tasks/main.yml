@@ -41,6 +41,7 @@
       - pipewire
       - pipewire-pulse
       - pavucontrol
+      - pamixer
       - geany
       - code
       - libnotify
@@ -62,6 +63,7 @@
       - vscodium-bin
       - greetd
       - greetd-gtkgreet
+      - azote
       - nwg-look-bin
       - nwg-displays
       - nwg-drawer
