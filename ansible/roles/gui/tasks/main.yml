@@ -64,6 +64,7 @@
       - greetd-gtkgreet
       - nwg-look-bin
       - nwg-displays
+      - nwg-drawer
     state: present
 
 - name: Import PAM Tasks
