@@ -1,5 +1,6 @@
 exec mako
 exec gammastep
+exec_always nwg-drawer -r
 exec nm-applet --indicator
 exec swayidle -w \
           timeout 300 'swaylock' \
