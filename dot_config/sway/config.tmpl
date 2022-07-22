@@ -143,6 +143,15 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# capture all screens to clipboard   
+bindsym Shift+Print exec grim - | wl-copy -t image/png
+    
+# capture the specified screen area to clipboard    
+bindsym Shift+Alt+Print exec grim -g "$(slurp)" - | wl-copy -t image/png
+    
+# capture the focused monitor to clipboard    
+bindsym Shift+Control+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy -t image/png
+
 bindsym XF86AudioMute exec pamixer -t
 bindsym XF86AudioRaiseVolume exec pamixer -i 2
 bindsym XF86AudioLowerVolume exec pamixer -d 2

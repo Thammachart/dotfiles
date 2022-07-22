@@ -23,6 +23,8 @@
       - openssh
       - zsh
       - lsd
+      - jq
+      - yq
 
       ## Modern Unix
       - bat
