@@ -16,6 +16,7 @@
       - inter-font
       - noto-fonts
       - noto-fonts-cjk
+      - noto-fonts-emoji
       - gnome-keyring
       - nautilus
       - evince
