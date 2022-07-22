@@ -31,6 +31,9 @@
       - swaylock
       - waybar
       - mako
+      - grim
+      - slurp
+      - wl-clipboard
       - xdg-desktop-portal-wlr
       - xdg-user-dirs
       - wofi
