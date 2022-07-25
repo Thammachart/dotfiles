@@ -24,7 +24,7 @@
       - zsh
       - lsd
       - jq
-      - yq
+      - go-yq
 
       ## Modern Unix
       - bat
