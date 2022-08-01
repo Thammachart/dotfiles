@@ -10,6 +10,7 @@ PATH=$GOPATH/bin:$PATH
 PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
 
 # Rust
+RUSTUP_HOME={{ .chezmoi.homeDir }}/.local/rustup
 CARGO_HOME={{ .chezmoi.homeDir }}/.local/cargo
 PATH=$CARGO_HOME/bin:$PATH
 
