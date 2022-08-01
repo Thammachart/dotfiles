@@ -1,5 +1,9 @@
 # Go
-GOPATH={{ .chezmoi.homeDir }}/.local/go-tools
+{{ if not (contains "Work" .chezmoi.hostname) -}}
+GOPATH=/mnt/data/.local/.go
+{{ else }}
+GOPATH={{ .chezmoi.homeDir }}/.local/go
+{{ end -}}
 
 # Java
 {{ if (eq .chezmoi.osRelease.id "arch") -}}
@@ -8,5 +12,5 @@ JAVA_HOME=/usr/lib/jvm/default
 
 {{ if not (contains "Work" .chezmoi.hostname) -}}
 # Pulumi
-PULUMI_HOME=/mnt/data/.pulumi
+PULUMI_HOME=/mnt/data/.local/.pulumi
 {{ end -}}
