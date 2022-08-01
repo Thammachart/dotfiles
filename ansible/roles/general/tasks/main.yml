@@ -21,6 +21,7 @@
       - ripgrep
       - neovim
       - base-devel
+      - polkit
       - python
       - python-pip
       - python-psutil
