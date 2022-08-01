@@ -71,6 +71,7 @@
       - nwg-look-bin
       - nwg-displays
       - nwg-drawer
+      - nwg-bar-bin
     state: present
 
 - name: Import PAM Tasks

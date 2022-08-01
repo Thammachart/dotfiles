@@ -12,5 +12,3 @@ client.urgent           #ebcb8b #ebcb8b #2e3440 #8fbcbb   #ebcb8b
 
 default_border pixel 3
 gaps inner 7
-
-exec ~/.azotebg
