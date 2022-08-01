@@ -4,6 +4,14 @@ GOPATH=/mnt/data/.local/.go
 {{ else }}
 GOPATH={{ .chezmoi.homeDir }}/.local/go
 {{ end -}}
+PATH=$GOPATH/bin:$PATH
+
+# Yarn
+PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
+
+# Rust
+CARGO_HOME={{ .chezmoi.homeDir }}/.local/cargo
+PATH=$CARGO_HOME/bin:$PATH
 
 # Java
 {{ if (eq .chezmoi.osRelease.id "arch") -}}

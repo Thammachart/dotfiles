@@ -46,11 +46,6 @@ eval $(fnm env)
 {{ end -}}
 
 {{ if (ne .chezmoi.os "linux") }}
-# rustup
+# rustup init env
 source $HOME/.cargo/env
-{{ else }}
-export PATH=$HOME/.cargo/bin:$PATH
 {{ end }}
-
-# yarn
-export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
