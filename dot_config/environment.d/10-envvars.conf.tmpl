@@ -1,18 +1,22 @@
-# Go
-GOPATH=$HOME/.local/go
-PATH=$GOPATH/bin:$PATH
+# Java
+{{ if (eq .chezmoi.osRelease.id "arch") -}}
+JAVA_HOME=/usr/lib/jvm/default
+{{ end -}}
+
+# Pulumi
+PULUMI_HOME=$HOME/.local/pulumi
 
 # Yarn
 PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
+
+# Go
+GOPATH=$HOME/.local/go
+PATH=$GOPATH/bin:$PATH
 
 # Rust
 RUSTUP_HOME=$HOME/.local/rustup
 CARGO_HOME=$HOME/.local/cargo
 PATH=$CARGO_HOME/bin:$PATH
 
-# Java
-{{ if (eq .chezmoi.osRelease.id "arch") -}}
-JAVA_HOME=/usr/lib/jvm/default
-{{ end -}}
-
-PULUMI_HOME=$HOME/.local/pulumi
+# Misc
+PATH=$HOME/.local/bin:$PATH
