@@ -42,6 +42,19 @@ window#waybar.hidden {
   margin: 0 5px;
 }
 
+#custom-power, #language {
+  padding: 0 5px;
+  margin: 0 1px;
+}
+
+#custom-power {
+  background: #5f3030;
+}
+
+#language {
+  background: #606b99;
+}
+
 #clock {
   background-color: #64727D;
 }

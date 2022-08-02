@@ -10,6 +10,11 @@
     "icon": "/usr/share/nwg-bar/images/system-log-out.svg"
   },
   {
+    "label": "Suspend",
+    "exec": "systemctl suspend",
+    "icon": "/usr/share/nwg-bar/images/system-lock-screen.svg"
+  },
+  {
     "label": "Reboot",
     "exec": "systemctl reboot",
     "icon": "/usr/share/nwg-bar/images/system-reboot.svg"
