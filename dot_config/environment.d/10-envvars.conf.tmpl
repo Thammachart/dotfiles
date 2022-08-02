@@ -1,17 +1,13 @@
 # Go
-{{ if not (contains "Work" .chezmoi.hostname) -}}
-GOPATH=/mnt/data/.local/go
-{{ else }}
-GOPATH={{ .chezmoi.homeDir }}/.local/go
-{{ end -}}
+GOPATH=$HOME/.local/go
 PATH=$GOPATH/bin:$PATH
 
 # Yarn
 PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
 
 # Rust
-RUSTUP_HOME={{ .chezmoi.homeDir }}/.local/rustup
-CARGO_HOME={{ .chezmoi.homeDir }}/.local/cargo
+RUSTUP_HOME=$HOME/.local/rustup
+CARGO_HOME=$HOME/.local/cargo
 PATH=$CARGO_HOME/bin:$PATH
 
 # Java
@@ -19,7 +15,4 @@ PATH=$CARGO_HOME/bin:$PATH
 JAVA_HOME=/usr/lib/jvm/default
 {{ end -}}
 
-{{ if not (contains "Work" .chezmoi.hostname) -}}
-# Pulumi
-PULUMI_HOME=/mnt/data/.local/pulumi
-{{ end -}}
+PULUMI_HOME=$HOME/.local/pulumi
