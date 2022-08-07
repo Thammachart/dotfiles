@@ -42,9 +42,15 @@ window#waybar.hidden {
   margin: 0 5px;
 }
 
-#custom-power, #language, #custom-notification {
+#custom-power, #language {
   padding: 0 5px;
   margin: 0 1px;
+}
+
+#custom-notification {
+  padding: 0 7px;
+  margin: 0 2px;
+  background-color: #3c5a5e;
 }
 
 #custom-power {
