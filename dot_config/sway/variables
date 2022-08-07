@@ -9,4 +9,4 @@ set $browser firefox
 set $filemanager nautilus
 set $editor geany
 set $launcher nwg-drawer
-set $exit nwg-bar -p center -a middle -i 48 -s preset-3.css
+set $locker swaylock
