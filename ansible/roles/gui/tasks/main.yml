@@ -72,6 +72,7 @@
       - nwg-displays
       - nwg-drawer
       - nwg-bar-bin
+      - swaync
     state: present
 
 - name: Import PAM Tasks

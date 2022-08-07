@@ -2,7 +2,8 @@
 exec ~/.azotebg
 
 # Notification
-exec mako
+# exec mako
+exec swaync
 
 # Display Color Temperature
 exec gammastep
