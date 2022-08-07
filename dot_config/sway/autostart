@@ -18,5 +18,5 @@ exec nm-applet --indicator
 exec swayidle -w \
           timeout 300 '$locker' \
           timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          timeout 1200 'sysremctl suespend' resume 'swaymsg "output * dpms on"' \
+          timeout 1200 'systemctl suspend' resume 'swaymsg "output * dpms on"' \
           before-sleep '$locker'
