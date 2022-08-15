@@ -33,23 +33,3 @@
     dest: /etc/resolv.conf
     state: link
     force: true
-- name: Enable systemd-timesyncd.service
-  become: true
-  systemd:
-    name: systemd-timesyncd.service
-    state: started
-    enabled: true
-    masked: false
-- name: Create {{ systemd_timesyncd_conf_location }} directory if it does not exist
-  become: true
-  file:
-    path: '{{ systemd_timesyncd_conf_location }}'
-    state: directory
-    mode: '0755'
-- name: Setup NTP Servers
-  become: true
-  template:
-    src: 'systemd-timesyncd.conf.j2'
-    dest: '{{ systemd_timesyncd_conf_location }}/00-system.conf'
-  notify:
-    - Restart systemd-timesyncd

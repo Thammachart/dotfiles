@@ -62,6 +62,7 @@
       - unzip
       - acpi_call
       - lshw
+      - chrony
     state: present
 
 - name: Import Privileges Tasks
@@ -69,6 +70,9 @@
 
 - name: Import Network Tasks
   import_tasks: _network.yml
+
+- name: Import Time Tasks
+  import_tasks: _time.yml
 
 - name: Enable Magic SysRq = {{ magicsysrq }}
   become: true

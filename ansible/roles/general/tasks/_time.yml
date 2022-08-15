@@ -1,0 +1,14 @@
+- name: Setup NTP Sources
+  become: true
+  template:
+    src: 'chrony.conf.j2'
+    dest: '/etc/chrony.conf'
+  notify:
+    - Restart {{ ntp_client_systemd_service }}
+- name: Enable {{ ntp_client_systemd_service }}
+  become: true
+  systemd:
+    name: '{{ ntp_client_systemd_service }}'
+    state: started
+    enabled: true
+    masked: false

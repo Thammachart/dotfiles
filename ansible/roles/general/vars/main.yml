@@ -4,6 +4,7 @@
   numeric_locale: en_US.UTF-8
   language_locales: en_US:en
   ssh_directory: '{{ ansible_env.HOME }}/.ssh'
-  systemd_timesyncd_conf_location: '/etc/systemd/timesyncd.conf.d'
-  primary_ntp_servers: ['time.cloudflare.com']
-  secondary_ntp_servers: ['time1.nimt.or.th', 'time2.nimt.or.th', 'time3.nimt.or.th', 'time4.nimt.or.th', 'time5.nimt.or.th']
+  ntp_client_systemd_service: 'chronyd.service'
+  ntp_sources: 
+    nimt: ['time1.nimt.or.th', 'time2.nimt.or.th', 'time3.nimt.or.th', 'time4.nimt.or.th', 'time5.nimt.or.th']
+    ntp_pool: ['th.pool.ntp.org']
