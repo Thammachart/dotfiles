@@ -9,7 +9,7 @@ exec swaync
 exec gammastep
 
 # nwg-drawer cache
-exec_always nwg-drawer -r
+exec_always nwg-drawer -r -nofs
 
 # NetworkManager System tray
 exec nm-applet --indicator
