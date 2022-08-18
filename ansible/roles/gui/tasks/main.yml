@@ -55,6 +55,7 @@
       - arc-gtk-theme
       - qt5-wayland
       - qt5ct
+      - qalculate-gtk
     state: present
 - name: Install GUI-related components (AUR)
   kewlfft.aur.aur:
