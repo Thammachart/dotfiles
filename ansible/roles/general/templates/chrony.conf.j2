@@ -1,5 +1,5 @@
 {% for ntp in ntp_sources.nimt %}
-server {{ ntp }} iburst minpoll 8 maxpoll 16
+server {{ ntp }} iburst minpoll 12 maxpoll 16
 {% endfor %}
 
 {% for pool in ntp_sources.ntp_pool %}
