@@ -3,7 +3,6 @@
   become: true
   package:
     name:
-      - ttf-hack
       - ttf-jetbrains-mono
       - ttf-cascadia-code
       - ttf-liberation
@@ -61,7 +60,6 @@
   kewlfft.aur.aur:
     name:
       - fonts-tlwg
-      - nerd-fonts-hack
       - nerd-fonts-jetbrains-mono
       - ttf-roboto-serif 
       - brave-bin
