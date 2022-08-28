@@ -61,6 +61,7 @@
     name:
       - fonts-tlwg
       - nerd-fonts-jetbrains-mono
+      - nerd-fonts-cascadia-code
       - ttf-roboto-serif 
       - brave-bin
       - vscodium-bin
