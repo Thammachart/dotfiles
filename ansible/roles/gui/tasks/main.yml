@@ -51,6 +51,7 @@
       - libnotify
       - syncthing
       - keepassxc
+      - gnupg
       - papirus-icon-theme
       - arc-gtk-theme
       - qt5-wayland
