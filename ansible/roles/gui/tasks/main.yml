@@ -70,7 +70,7 @@
       - azote
       - nwg-look-bin
       - nwg-displays
-      - nwg-drawer
+      - nwg-drawer-bin
       - nwg-bar-bin
       - swaync
     state: present
