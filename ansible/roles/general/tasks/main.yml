@@ -34,6 +34,7 @@
       - lsd
       - jq
       - go-yq
+      - gnupg
 
       ## Modern Unix
       - bat
