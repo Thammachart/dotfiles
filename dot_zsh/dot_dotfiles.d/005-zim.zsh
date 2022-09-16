@@ -1,4 +1,4 @@
-ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 
 if [[ ! -f ${ZIM_HOME}/zimfw.zsh ]]; then
     print -P "Installing zimfw..."

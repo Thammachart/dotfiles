@@ -5,15 +5,9 @@ if [[ -z $DISPLAY && $(tty) == /dev/tty1 && $XDG_SESSION_TYPE == tty ]]; then
     eval export $l
   done < <(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
 
-  ## GNOME
-  #exec dbus-run-session gnome-session
-
   ## Sway
   export XDG_CURRENT_DESKTOP=sway
   export QT_QPA_PLATFORMTHEME=qt5ct
   exec sway
-
-  ## KDE
-  #dbus-run-session startplasma-wayland
 fi
 {{ end -}}
