@@ -1,6 +1,6 @@
 [linux.fonts.latin]
-ui = "Roboto"
-sans = "Roboto"
+ui = "Lato"
+sans = "Lato"
 serif = "Noto Serif"
 monospace = "JetBrains Mono NL"
 ui_monospace = "JetBrains Mono NL"
