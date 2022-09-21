@@ -2,8 +2,8 @@
 locker = "gtklock -d"
 
 [linux.fonts.latin]
-ui = "Lato"
-sans = "Lato"
+ui = "Roboto"
+sans = "Roboto"
 serif = "Noto Serif"
 monospace = "JetBrains Mono NL"
 ui_monospace = "JetBrains Mono NL"
