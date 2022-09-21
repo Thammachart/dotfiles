@@ -1,3 +1,6 @@
+[linux.general]
+locker = "gtklock -d"
+
 [linux.fonts.latin]
 ui = "Lato"
 sans = "Lato"

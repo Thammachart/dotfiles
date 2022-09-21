@@ -69,6 +69,7 @@
       - vscodium-bin
       - greetd
       - greetd-gtkgreet
+      - gtklock
       - azote
       - nwg-look-bin
       - nwg-displays
