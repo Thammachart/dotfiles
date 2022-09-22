@@ -1,5 +1,5 @@
 [linux.general]
-locker = "gtklock -d"
+locker = "gtklock"
 
 [linux.fonts.latin]
 ui = "Roboto"
