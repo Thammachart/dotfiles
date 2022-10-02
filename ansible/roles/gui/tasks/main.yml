@@ -22,6 +22,7 @@
       - evince
       - firefox
       - chromium
+      - network-manager-applet
       - mesa
       - libva-mesa-driver
       - libva-utils
