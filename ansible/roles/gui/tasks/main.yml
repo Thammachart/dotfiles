@@ -38,7 +38,6 @@
       - wl-clipboard
       - xdg-desktop-portal-wlr
       - xdg-user-dirs
-      - wofi
       - alacritty
       - tilix
       - xorg-xwayland
