@@ -57,6 +57,7 @@
       - qt5-wayland
       - qt5ct
       - qalculate-gtk
+      - udisks2
     state: present
 - name: Install GUI-related components (AUR)
   kewlfft.aur.aur:
@@ -77,6 +78,19 @@
       - nwg-bar-bin
       - swaync
     state: present
+- name: udisk Default Mount Options
+  become: true
+  community.general.ini_file:
+    path: '{{ udisk_default_mount_path }}'
+    mode: '0644'
+    section: defaults
+    option: "{{ item.key }}_defaults"
+    value: "{{ item.value }}"
+    no_extra_spaces: true
+    state: present
+  with_dict:
+    ntfs: "uid=$UID,gid=$GID,noatime,prealloc"
+    btrfs: "noatime,compress=zstd:1"
 
 - name: Import PAM Tasks
   import_tasks: _pam.yml

@@ -6,3 +6,4 @@
   sway_launcher_path: '/usr/local/bin/launch-sway'
   kde_launcher_path: '/usr/local/bin/launch-kde'
   gnome_launcher_path: '/usr/local/bin/launch-gnome'
+  udisk_default_mount_path: '/etc/udisks2/mount_options.conf'
