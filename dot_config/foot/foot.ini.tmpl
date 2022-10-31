@@ -8,7 +8,7 @@
 # title=foot
 # locked-title=no
 
-font={{ .linux.fonts.latin.terminal_monospace }}:size=12
+font={{ .linux.fonts.latin.terminal_monospace }}:size=14
 # font-bold=<bold variant of regular font>
 # font-italic=<italic variant of regular font>
 # font-bold-italic=<bold+italic variant of regular font>
@@ -53,7 +53,8 @@ font={{ .linux.fonts.latin.terminal_monospace }}:size=12
 # uri-characters=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.,~:;/?#@!$&%*+="'()[]
 
 [cursor]
-# style=block
+style=underline
+blink=no
 # color=<inverse foreground/background>
 # blink=no
 # beam-thickness=1.5
@@ -63,7 +64,34 @@ font={{ .linux.fonts.latin.terminal_monospace }}:size=12
 # hide-when-typing=no
 # alternate-scroll-mode=yes
 
+# Selenized dark
+
+[cursor]
+color = 103c48 53d6c7
+
 [colors]
+background= 103c48
+foreground= adbcbc
+
+regular0=   184956
+regular1=   fa5750
+regular2=   75b938
+regular3=   dbb32d
+regular4=   4695f7
+regular5=   f275be
+regular6=   41c7b9
+regular7=   72898f
+
+bright0=    2d5b69
+bright1=    ff665c
+bright2=    84c747
+bright3=    ebc13d
+bright4=    58a3ff
+bright5=    ff84cd
+bright6=    53d6c7
+bright7=    cad8d9
+
+#[colors]
 # alpha=1.0
 # foreground=dcdccc
 # background=111111

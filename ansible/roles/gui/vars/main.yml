@@ -1,4 +1,5 @@
 ---
+  gtkgreet_css: '/etc/greetd/gtkgreet.css'
   gtkgreet_sway_config: '/etc/greetd/gtkgreet-sway-config'
   qtgreet_sway_config: '/etc/greetd/qtgreet-sway-config'
   wayland_enablement_path: '/usr/local/bin/wayland-enablement.sh'

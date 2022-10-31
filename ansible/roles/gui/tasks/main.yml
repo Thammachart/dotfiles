@@ -56,6 +56,7 @@
       - arc-gtk-theme
       - qt5-wayland
       - qt5ct
+      - kimageformats
       - qalculate-gtk
       - udisks2
     state: present
@@ -77,6 +78,7 @@
       - nwg-drawer-bin
       - nwg-bar-bin
       - swaync
+      - qview
     state: present
 - name: udisk Default Mount Options
   become: true
@@ -89,8 +91,9 @@
     no_extra_spaces: true
     state: present
   with_dict:
-    ntfs: "uid=$UID,gid=$GID,noatime,prealloc"
+    ext4: "noatime,commit=30"
     btrfs: "noatime,compress=zstd:1"
+    ntfs: "uid=$UID,gid=$GID,noatime,prealloc"
 
 - name: Import PAM Tasks
   import_tasks: _pam.yml

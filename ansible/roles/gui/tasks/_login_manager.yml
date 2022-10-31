@@ -18,6 +18,7 @@
     dest: "{{ item.dest }}"
     mode: '{{ item.mode|default ("644") }}'
   with_items:
+    - { src: "greetd-gtkgreet-style.css.j2", dest: "{{ gtkgreet_css }}" }
     - { src: "greetd-config.toml.j2", dest: "/etc/greetd/config.toml" }
     - {
         src: "greetd-gtkgreet-sway-config.j2",
@@ -37,3 +38,9 @@
         src: "gnome-custom-desktop-entry.j2",
         dest: "/usr/share/wayland-sessions/gnome-custom.desktop",
       }
+- name: Enable greetd
+  become: true
+  systemd:
+    name: greetd
+    enabled: true
+    masked: false
