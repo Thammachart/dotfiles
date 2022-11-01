@@ -107,12 +107,14 @@
     state: present
     create: true
 - name: Ensure Locale exists
+  become: true
   community.general.locale_gen:
     name: "{{ item }}"
     state: present
   loop:
     - "{{ default_locale }}"
     - en_US.UTF-8
+    - en_DK.UTF-8
     - th_TH.UTF-8
 - name: Locale Setting
   become: true
@@ -126,6 +128,7 @@
     "LANG": "{{ default_locale }}"
     "LANGUAGE": "{{ language_locales }}"
     "LC_NUMERIC": "{{ numeric_locale }}"
+    "LC_TIME": "{{ time_locale }}"
 
 - name: Ensure Rustup Stable Toolchain is installed
   shell: rustup install stable
