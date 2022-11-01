@@ -106,6 +106,14 @@
     line: "FONT=ter-u28n"
     state: present
     create: true
+- name: Ensure Locale exists
+  community.general.locale_gen:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - "{{ default_locale }}"
+    - en_US.UTF-8
+    - th_TH.UTF-8
 - name: Locale Setting
   become: true
   lineinfile:
