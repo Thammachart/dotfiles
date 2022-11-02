@@ -14,6 +14,10 @@ exec_always nwg-drawer -r -nofs
 # NetworkManager System tray
 exec nm-applet --indicator
 
+{{ if (eq .linux.general.terminal "footclient") }}
+exec foot --server
+{{ end }}
+
 # Idle Handling
 exec swayidle -w \
           timeout 300 '$locker' \

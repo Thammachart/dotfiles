@@ -1,5 +1,6 @@
 [linux.general]
 locker = "gtklock -d"
+terminal = "footclient"
 
 [linux.fonts.latin]
 ui = "Roboto"
