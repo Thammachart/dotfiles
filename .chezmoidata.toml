@@ -11,6 +11,6 @@ ui_monospace = "JetBrains Mono NL"
 terminal_monospace = "Cascadia Mono PL"
 
 [linux.fonts.thai]
-sans = "Loma"
+sans = "Noto Sans Thai"
 serif = "Noto Serif Thai"
 monospace = "Tlwg Typo"
