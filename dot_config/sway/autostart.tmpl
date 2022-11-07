@@ -2,14 +2,15 @@
 exec ~/.azotebg
 
 # Notification
-# exec mako
 exec swaync
 
 # Display Color Temperature
 exec gammastep
 
+{{ if (eq .linux.general.launcher "nwg-drawer" ) }}
 # nwg-drawer cache
 exec_always nwg-drawer -r -nofs
+{{ end }}
 
 # NetworkManager System tray
 exec nm-applet --indicator

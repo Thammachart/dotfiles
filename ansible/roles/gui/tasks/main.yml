@@ -38,9 +38,11 @@
       - wl-clipboard
       - xdg-desktop-portal-wlr
       - xdg-user-dirs
+      - foot 
       - alacritty
       - tilix
       - xorg-xwayland
+      - fuzzel
       - gammastep
       - kanshi
       - pipewire

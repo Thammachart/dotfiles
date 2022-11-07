@@ -143,5 +143,5 @@
         "escape": true
     },
     //"custom/power":{ "format": "", "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Suspend' 'systemctl suspend' -b 'Reboot' 'systemctl reboot' -b 'Poweroff' 'systemctl poweroff'" }
-    "custom/power":{ "format": "", "on-click": "nwg-bar -t ~/.config/nwg-bar/exit-bar/bar.json -s ~/.config/nwg-bar/exit-bar/style.css" }
+    "custom/power":{ "format": "", "on-click": "{{ .linux.general.powermenu }}" }
 }
