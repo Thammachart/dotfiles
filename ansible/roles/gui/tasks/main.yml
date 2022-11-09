@@ -62,6 +62,7 @@
       - kimageformats
       - qalculate-gtk
       - udisks2
+      - udiskie
     state: present
 - name: Install GUI-related components (AUR)
   kewlfft.aur.aur:
