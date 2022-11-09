@@ -19,6 +19,9 @@ exec nm-applet --indicator
 exec foot --server
 {{ end }}
 
+# udisks2 Frontend
+exec udiskie
+
 # Idle Handling
 exec swayidle -w \
           timeout 300 '$locker' \

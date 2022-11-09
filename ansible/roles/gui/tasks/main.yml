@@ -47,6 +47,7 @@
       - kanshi
       - pipewire
       - pipewire-pulse
+      - pipewire-jack
       - pavucontrol
       - pamixer
       - geany
