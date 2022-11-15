@@ -84,20 +84,21 @@
       - swaync
       - qview
     state: present
-- name: udisk Default Mount Options
+- name: udisks2 Mount Options
   become: true
   community.general.ini_file:
-    path: '{{ udisk_default_mount_path }}'
+    path: '{{ udisk_mount_options_path }}'
     mode: '0644'
     section: defaults
-    option: "{{ item.key }}_defaults"
+    option: "{{ item.key }}"
     value: "{{ item.value }}"
     no_extra_spaces: true
     state: present
   with_dict:
-    ext4: "noatime,commit=30"
-    btrfs: "noatime,compress=zstd:1"
-    ntfs: "uid=$UID,gid=$GID,noatime,prealloc"
+    ext4_allow: errors=remount-ro,commit
+    ext4_defaults: "noatime,commit=30"
+    btrfs_defaults: "noatime,compress=zstd:1"
+    ntfs_defaults: "uid=$UID,gid=$GID,noatime,prealloc"
 
 - name: Import PAM Tasks
   import_tasks: _pam.yml
