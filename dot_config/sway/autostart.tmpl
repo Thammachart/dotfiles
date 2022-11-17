@@ -1,19 +1,8 @@
-# Wallpapers
-exec ~/.azotebg
+# PolicyKit Agent
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Notification
 exec swaync
-
-# Display Color Temperature
-exec gammastep
-
-{{ if (eq .linux.general.launcher "nwg-drawer" ) }}
-# nwg-drawer cache
-exec_always nwg-drawer -r -nofs
-{{ end }}
-
-# NetworkManager System tray
-exec nm-applet --indicator
 
 {{ if (eq .linux.general.terminal "footclient") }}
 exec foot --server
@@ -21,6 +10,20 @@ exec foot --server
 
 # udisks2 Frontend
 exec udiskie
+
+# Wallpapers
+exec ~/.azotebg
+
+{{ if (eq .linux.general.launcher "nwg-drawer" ) }}
+# nwg-drawer cache
+exec_always nwg-drawer -r -nofs
+{{ end }}
+
+# Display Color Temperature
+exec gammastep
+
+# NetworkManager System tray
+exec nm-applet --indicator
 
 # Idle Handling
 exec swayidle -w \

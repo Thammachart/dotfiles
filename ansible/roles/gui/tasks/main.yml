@@ -17,6 +17,7 @@
       - noto-fonts
       - noto-fonts-cjk
       - noto-fonts-emoji
+      - polkit-gnome
       - gnome-keyring
       - krusader
       - atril
@@ -63,6 +64,7 @@
       - qalculate-gtk
       - udisks2
       - udiskie
+      - gufw
     state: present
 - name: Install GUI-related components (AUR)
   kewlfft.aur.aur:
