@@ -17,9 +17,9 @@
       - noto-fonts
       - noto-fonts-cjk
       - noto-fonts-emoji
-      - polkit-gnome
-      - gnome-keyring
+      - polkit-kde-agent 
       - krusader
+      - pcmanfm-qt
       - atril
       - firefox
       - chromium
