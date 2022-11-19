@@ -64,7 +64,6 @@
       - qalculate-gtk
       - udisks2
       - udiskie
-      - gufw
     state: present
 - name: Install GUI-related components (AUR)
   kewlfft.aur.aur:

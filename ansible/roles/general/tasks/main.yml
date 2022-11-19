@@ -35,7 +35,7 @@
       - jq
       - go-yq
       - gnupg
-      - ufw
+      - firewalld
 
       ## Modern Unix
       - bat
