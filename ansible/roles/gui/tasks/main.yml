@@ -60,6 +60,9 @@
       - arc-gtk-theme
       - qt5-wayland
       - qt5ct
+      - lxqt-archiver
+      - lximage-qt
+      - qt5-imageformats
       - kimageformats
       - qalculate-gtk
       - udisks2
