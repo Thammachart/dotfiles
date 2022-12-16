@@ -83,10 +83,8 @@
       - azote
       - nwg-look-bin
       - nwg-displays
-      - nwg-drawer-bin
       - nwg-bar-bin
       - swaync
-      - qview
     state: present
 - name: udisks2 Mount Options
   become: true
