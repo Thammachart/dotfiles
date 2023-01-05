@@ -3,6 +3,7 @@
 source {{ wayland_enablement_path }}
 source {{ load_systemd_envs_path }}
 
+export WLR_RENDERER=vulkan
 export XDG_SESSION_DESKTOP=sway
 export XDG_CURRENT_DESKTOP=sway
 export QT_QPA_PLATFORMTHEME=qt5ct
