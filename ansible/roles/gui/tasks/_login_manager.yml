@@ -9,6 +9,7 @@
     - { src: "wayland-enablement.sh.j2", dest: "{{ wayland_enablement_path }}" }
     - { src: "load-systemd-envs.sh.j2", dest: "{{ load_systemd_envs_path }}" }
     - { src: "launch-sway.j2", dest: "{{ sway_launcher_path }}", mode: "755" }
+    - { src: "launch-hyprland.j2", dest: "{{ hyprland_launcher_path }}", mode: "755" }
     - { src: "launch-kde.j2", dest: "{{ kde_launcher_path }}", mode: "755" }
     - { src: "launch-gnome.j2", dest: "{{ gnome_launcher_path }}", mode: "755" }
 - name: Create & Configure greetd

@@ -5,6 +5,7 @@
   wayland_enablement_path: '/usr/local/bin/wayland-enablement.sh'
   load_systemd_envs_path: '/usr/local/bin/load-systemd-envs.sh'
   sway_launcher_path: '/usr/local/bin/launch-sway'
+  hyprland_launcher_path: '/usr/local/bin/launch-hyprland'
   kde_launcher_path: '/usr/local/bin/launch-kde'
   gnome_launcher_path: '/usr/local/bin/launch-gnome'
   udisk_mount_options_path: '/etc/udisks2/mount_options.conf'

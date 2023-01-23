@@ -1,5 +1,9 @@
 - name: Setup local workstation
   hosts: local
+  vars_prompt:
+    name: machine_type
+    prompt: Machine Type (`personal` or `work`)
+    default: "personal"
   roles:
     - general
     - gui

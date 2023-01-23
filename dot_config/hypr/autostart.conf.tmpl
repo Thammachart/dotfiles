@@ -1,0 +1,17 @@
+exec-once = /usr/lib/polkit-kde-authentication-agent-1
+
+exec-once = waybar
+
+exec-once = swaync
+
+{{- if (eq .linux.general.terminal "footclient") }}
+exec-once = foot --server
+{{ end }}
+
+exec-once = udiskie
+
+exec-once = ~/.azotebg
+
+exec-once = gammastep
+
+exec-once = nm-applet --indicator

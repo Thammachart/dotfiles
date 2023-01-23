@@ -1,0 +1,11 @@
+#!/bin/sh
+
+source {{ wayland_enablement_path }}
+source {{ load_systemd_envs_path }}
+
+export XDG_SESSION_DESKTOP=hyprland
+export XDG_CURRENT_DESKTOP=hyprland
+export QT_QPA_PLATFORMTHEME=qt5ct
+export XCURSOR_SIZE=24
+
+exec systemd-cat --identifier=hyprland Hyprland $@

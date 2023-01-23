@@ -79,6 +79,10 @@
 - name: Import Time Tasks
   import_tasks: _time.yml
 
+- name: Set hostname
+  hostname:
+    name: "{{ owner }}-{{ ansible_system }}-{{ ansible_form_factor }}"
+    use: systemd
 - name: Enable Magic SysRq = {{ magicsysrq }}
   become: true
   lineinfile:
