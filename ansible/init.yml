@@ -4,6 +4,7 @@
     name: machine_type
     prompt: Machine Type (`personal` or `work`)
     default: "personal"
+    private: false
   roles:
     - general
     - gui

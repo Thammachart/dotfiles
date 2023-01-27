@@ -65,6 +65,8 @@
       - acpi_call
       - lshw
       - chrony
+      - pam-u2f
+      - gnome-keyring
     state: present
 
 - name: Import Privileges Tasks
