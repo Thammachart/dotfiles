@@ -81,9 +81,19 @@
 - name: Import Time Tasks
   import_tasks: _time.yml
 
+- name: set variables for Personal
+  set_fact:
+    custom_hostname: "{{ owner }}-{{ ansible_system }}-{{ ansible_form_factor }}"
+  when: machine_type == "personal"
+
+- name: set variables for Work
+  set_fact:
+    custom_hostname: "{{ owner }}-Work-{{ ansible_system }}-{{ ansible_form_factor }}"
+  when: machine_type == "work"
+
 - name: Set hostname
   hostname:
-    name: "{{ owner }}-{{ ansible_system }}-{{ ansible_form_factor }}"
+    name: "{{ custom_hostname }}"
     use: systemd
 - name: Enable Magic SysRq = {{ magicsysrq }}
   become: true
