@@ -6,6 +6,7 @@
   language_locales: en_SG:en
   time_locale: en_DK.UTF-8
   journald_config_directory: '/etc/systemd/journald.conf.d'
+  resolved_config_directory: '/etc/systemd/resolved.conf.d'
   ssh_directory: '{{ ansible_env.HOME }}/.ssh'
   ntp_client_systemd_service: 'chronyd.service'
   ntp_sources: 

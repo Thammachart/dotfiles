@@ -1,17 +1,4 @@
 ---
-# - name: Disable IPv6 due to timeout issue when connecting to IPv6-supported sites
-#   become: true
-#   lineinfile:
-#     path: /etc/sysctl.d/40-ipv6.conf
-#     line: "net.ipv6.conf.all.disable_ipv6 = 1"
-#     state: present
-- name: Prefer IPv4 over IPv6 in getaddrinfo config
-  become: true
-  lineinfile:
-    path: /etc/gai.conf
-    line: "precedence ::ffff:0:0/96  100"
-    insertafter: EOF
-    state: present
 - name: Enable NetworkManager Service
   become: true
   systemd:
@@ -19,6 +6,18 @@
     state: started
     enabled: true
     masked: false
+- name: Create {{ resolved_config_directory }} directory if not exist
+  become: true
+  file:
+    path: '{{ resolved_config_directory }}'
+    state: directory
+    mode: 0755
+- name: systemd-resolved DNSStubListenerExtra /w IPv6
+  become: true
+  template:
+    src: 'resolved.conf.j2'
+    dest: '{{ resolved_config_directory }}/00-extra-stub.conf'
+    mode: 0644
 - name: Enable systemd-resolved Service
   become: true
   systemd:
