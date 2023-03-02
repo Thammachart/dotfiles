@@ -75,6 +75,7 @@
   kewlfft.aur.aur:
     name:
       - fonts-tlwg
+      - ttf-roboto-flex
       - ttf-roboto-serif 
       - brave-bin
       - vscodium-bin
