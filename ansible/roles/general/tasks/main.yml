@@ -54,7 +54,7 @@
       - java-environment-common
       - go
       - rustup
-      - nodejs-lts-gallium
+      - nodejs-lts-hydrogen
       - yarn
       - docker
       - docker-compose

@@ -6,14 +6,13 @@
       - ttf-jetbrains-mono
       - ttf-cascadia-code
       - ttf-liberation
-      - ttf-ibm-plex
       - ttf-roboto
-      - ttf-lato
-      - ttf-ubuntu-font-family
-      - adobe-source-serif-fonts
       - ttf-fira-sans
       - ttf-fira-code
+      - ttf-ubuntu-font-family
+      - ttf-ibm-plex
       - inter-font
+      - adobe-source-serif-fonts
       - noto-fonts
       - noto-fonts-cjk
       - noto-fonts-emoji
@@ -81,6 +80,7 @@
       - vscodium-bin
       - greetd
       - greetd-gtkgreet
+      - greetd-tuigreet
       - gtklock
       - azote
       - nwg-look-bin
