@@ -17,7 +17,7 @@
       - noto-fonts-cjk
       - noto-fonts-emoji
       - ttf-jetbrains-mono-nerd
-      - otf-cascadia-code-nerd
+      - ttf-cascadia-code-nerd
       - polkit-kde-agent 
       - krusader
       - pcmanfm-qt

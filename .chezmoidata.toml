@@ -10,7 +10,7 @@ sans = "Roboto"
 serif = "Noto Serif"
 monospace = "JetBrains Mono NL"
 ui_monospace = "JetBrains Mono NL"
-terminal_monospace = "Cascadia Mono PL"
+terminal_monospace = "CaskaydiaCove Nerd Font"
 
 [linux.fonts.thai]
 sans = "Loma"
