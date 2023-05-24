@@ -62,6 +62,7 @@
       - arc-gtk-theme
       - qt5-wayland
       - qt5ct
+      - kvantum
       - lxqt-archiver
       - lximage-qt
       - qt5-imageformats
@@ -74,12 +75,10 @@
   kewlfft.aur.aur:
     name:
       - fonts-tlwg
-      - ttf-roboto-flex
-      - ttf-roboto-serif 
       - brave-bin
       - vscodium-bin
       - greetd
-      - greetd-gtkgreet
+      - greetd-qtgreet
       - greetd-tuigreet
       - gtklock
       - azote
