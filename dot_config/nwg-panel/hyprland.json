@@ -24,7 +24,9 @@
       "clock"
     ],
     "controls-settings": {
-      "components": [],
+      "components": [
+        "volume"
+      ],
       "commands": {
         "net": "",
         "bluetooth": "",
@@ -53,7 +55,7 @@
         "icon": "",
         "items": []
       },
-      "output-switcher": false,
+      "output-switcher": true,
       "backlight-controller": "light",
       "backlight-device": "",
       "window-width": 0,
@@ -162,7 +164,7 @@
       "on-scroll-down": "",
       "root-css-name": "root-clock",
       "css-name": "clock",
-      "interval": 1,
+      "interval": 2,
       "angle": 0.0,
       "calendar-path": "",
       "calendar-css-name": "calendar-window",
@@ -249,6 +251,20 @@
     },
     "homogeneous": true,
     "exclusive-zone": true,
-    "tray": {}
+    "tray": {},
+    "swaync": {
+      "tooltip-text": "Notifications",
+      "on-left-click": "swaync-client -t",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "root-css-name": "root-executor",
+      "css-name": "executor",
+      "icon-placement": "left",
+      "icon-size": 18,
+      "interval": 2,
+      "always-show-icon": true
+    }
   }
 ]

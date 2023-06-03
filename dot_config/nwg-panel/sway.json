@@ -21,7 +21,8 @@
     "modules-center": [],
     "modules-right": [
       "tray",
-      "clock"
+      "clock",
+      "executor-pavucontrol"
     ],
     "controls-settings": {
       "components": [
@@ -38,7 +39,7 @@
       "icon-size": 16,
       "hover-opens": false,
       "leave-closes": true,
-      "click-closes": false,
+      "click-closes": true,
       "root-css-name": "controls-overview",
       "css-name": "controls-window",
       "net-interface": "",
@@ -282,6 +283,23 @@
       "icon-size": 18,
       "interval": 2,
       "always-show-icon": true
+    },
+    "executor-pavucontrol": {
+      "script": "",
+      "tooltip-text": "",
+      "on-left-click": "pamixer -t",
+      "on-middle-click": "",
+      "on-right-click": "pavucontrol",
+      "on-scroll-up": "pamixer -i 2",
+      "on-scroll-down": "pamixer -d 2",
+      "root-css-name": "",
+      "css-name": "",
+      "icon-placement": "left",
+      "icon-size": 16,
+      "interval": 0,
+      "angle": 0.0,
+      "sigrt": 34,
+      "use-sigrt": false
     }
   }
 ]

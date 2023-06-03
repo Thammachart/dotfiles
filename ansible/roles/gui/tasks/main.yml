@@ -82,6 +82,7 @@
       - greetd-tuigreet
       - gtklock
       - azote
+      - wlr-randr
       - nwg-look-bin
       - nwg-displays
       - nwg-bar-bin

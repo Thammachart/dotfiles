@@ -36,6 +36,10 @@
         dest: "/usr/share/wayland-sessions/sway-custom.desktop",
       }
     - {
+        src: "hyprland-custom-desktop-entry.j2",
+        dest: "/usr/share/wayland-sessions/hyprland-custom.desktop",
+      }
+    - {
         src: "gnome-custom-desktop-entry.j2",
         dest: "/usr/share/wayland-sessions/gnome-custom.desktop",
       }
