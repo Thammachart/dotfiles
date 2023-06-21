@@ -91,7 +91,7 @@
     custom_hostname: "{{ owner }}-Work-{{ ansible_system }}-{{ ansible_form_factor }}"
   when: machine_type == "work"
 
-- name: Set hostname
+- name: Set hostname {{ custom_hostname }}
   hostname:
     name: "{{ custom_hostname }}"
     use: systemd
@@ -104,7 +104,7 @@
     create: true
 - name: Install AUR Helper
   kewlfft.aur.aur:
-    name: yay-bin
+    name: yay
     state: present
     #skip_installed: true
 - name: Install AUR Components
