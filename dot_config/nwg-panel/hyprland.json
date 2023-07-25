@@ -20,6 +20,7 @@
     ],
     "modules-center": [],
     "modules-right": [
+      "swaync",
       "tray",
       "clock"
     ],

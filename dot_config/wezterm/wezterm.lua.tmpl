@@ -1,11 +1,29 @@
 local wezterm = require 'wezterm';
+local act = wezterm.action
 
-return {
-  enable_wayland = true,
-  font = wezterm.font("{{ .linux.fonts.latin.terminal_monospace }}"),
-  keys = {
-    -- Clears the scrollback and viewport leaving the prompt line the new first line.
-    {key="K", mods="CTRL|SHIFT", action=wezterm.action{ClearScrollback="ScrollbackAndViewport"}},
+local config = {}
+
+if wezterm.config_builder then
+  config = wezterm.config_builder()
+end
+
+config.enable_wayland = true
+config.font = wezterm.font("{{ .linux.fonts.latin.terminal_monospace }}")
+config.color_scheme = 'AdventureTime'
+config.enable_scroll_bar = true
+config.hide_tab_bar_if_only_one_tab = true
+
+config.keys = {
+  -- Clears the scrollback and viewport, and then sends CTRL-L to ask the
+  -- shell to redraw its prompt
+  {
+    key = 'K',
+    mods = 'CTRL|SHIFT',
+    action = act.Multiple {
+      act.ClearScrollback 'ScrollbackAndViewport',
+      act.SendKey { key = 'L', mods = 'CTRL' },
+    },
   },
-  enable_scroll_bar = true,
 }
+
+return config
