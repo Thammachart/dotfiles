@@ -1,8 +1,8 @@
 # Status Bar
-exec waybar -c ~/.config/waybar/sway.json -s ~/.config/waybar/sway.css
+exec systemd-cat -t waybar waybar -c ~/.config/waybar/sway.json -s ~/.config/waybar/sway.css
 
-# PolicyKit Agent
-exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
+# PolicyKit GUI Agent
+# exec /usr/lib/polkit-kde-authentication-agent-1
 
 # Notification
 exec swaync
@@ -10,9 +10,6 @@ exec swaync
 {{- if (eq .linux.general.terminal "footclient") }}
 exec foot --server
 {{ end }}
-
-# udisks2 Frontend
-exec udiskie
 
 # Wallpapers
 exec ~/.azotebg
@@ -23,7 +20,7 @@ exec_always nwg-drawer -r -nofs
 {{ end }}
 
 # Display Color Temperature
-exec gammastep-indicator
+exec systemd-cat -t wlsunset wlsunset -S 06:30 -s 18:30 -d 1800 -t 4000 -T 6500
 
 # NetworkManager System tray
 exec nm-applet --indicator

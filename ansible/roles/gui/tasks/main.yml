@@ -77,7 +77,6 @@
       - brave-bin
       - vscodium-bin
       - greetd
-      - greetd-qtgreet
       - greetd-tuigreet
       - gtklock
       - azote
@@ -86,6 +85,7 @@
       - nwg-displays
       - nwg-bar-bin
       - swaync
+      - wlsunset
     state: present
 - name: udisks2 Mount Options
   become: true
