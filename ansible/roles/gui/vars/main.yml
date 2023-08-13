@@ -2,6 +2,8 @@
   gtkgreet_css: '/etc/greetd/gtkgreet.css'
   gtkgreet_sway_config: '/etc/greetd/gtkgreet-sway-config'
   qtgreet_sway_config: '/etc/greetd/qtgreet-sway-config'
+  regreet_sway_config: '/etc/greetd/regreet-sway-config'
+  regreet_config: '/etc/greetd/regreet-config.toml'
   wayland_enablement_path: '/usr/local/bin/wayland-enablement.sh'
   load_systemd_envs_path: '/usr/local/bin/load-systemd-envs.sh'
   sway_launcher_path: '/usr/local/bin/launch-sway'

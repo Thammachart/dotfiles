@@ -20,7 +20,7 @@
       - ttf-cascadia-code-nerd
       - polkit-kde-agent 
       - pcmanfm-qt
-      - atril
+      - evince
       - firefox
       - chromium
       - network-manager-applet
@@ -69,6 +69,9 @@
       - qalculate-gtk
       - udisks2
       - udiskie
+      - greetd
+      - greetd-tuigreet
+      - greetd-regreet
     state: present
 - name: Install GUI-related components (AUR)
   kewlfft.aur.aur:
@@ -76,8 +79,6 @@
       - fonts-tlwg
       - brave-bin
       - vscodium-bin
-      - greetd
-      - greetd-tuigreet
       - gtklock
       - azote
       - wlr-randr

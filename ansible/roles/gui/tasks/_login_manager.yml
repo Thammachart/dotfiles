@@ -43,6 +43,8 @@
         src: "gnome-custom-desktop-entry.j2",
         dest: "/usr/share/wayland-sessions/gnome-custom.desktop",
       }
+    - { src: "greetd-regreet-sway-config.j2", dest: "{{ regreet_sway_config }}" }
+    - { src: "greetd-regreet-config.toml.j2", dest: "{{ regreet_config }}" }
 - name: Enable greetd
   become: true
   systemd:
