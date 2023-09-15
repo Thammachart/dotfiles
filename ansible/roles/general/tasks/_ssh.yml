@@ -6,9 +6,8 @@
     mode: 0700
 - name: Create Personal KeyPair
   openssh_keypair:
-    path: "{{ ssh_directory }}/id_rsa"
-    type: rsa
-    size: 4096
+    path: "{{ ssh_directory }}/id_ed25519"
+    type: ed25519
 - name: Create SSH Config file
   copy:
     src: ssh_config

@@ -1,4 +1,5 @@
 [linux.general]
+browser = "firefox"
 launcher = "fuzzel"
 locker = "gtklock -d"
 terminal = "footclient"
