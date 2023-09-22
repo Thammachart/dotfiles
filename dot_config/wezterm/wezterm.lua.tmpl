@@ -9,9 +9,18 @@ end
 
 config.enable_wayland = true
 config.font = wezterm.font("{{ .linux.fonts.latin.terminal_monospace }}")
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 config.color_scheme = 'AdventureTime'
 config.enable_scroll_bar = true
 config.hide_tab_bar_if_only_one_tab = true
+config.default_cursor_style = 'SteadyUnderline'
+
+config.window_padding = {
+  left = 1,
+  right = 1,
+  top = 0,
+  bottom = 0,
+}
 
 config.keys = {
   -- Clears the scrollback and viewport, and then sends CTRL-L to ask the
