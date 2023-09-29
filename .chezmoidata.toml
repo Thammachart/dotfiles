@@ -2,7 +2,7 @@
 browser = "firefox"
 launcher = "fuzzel"
 locker = "gtklock -d"
-terminal = "wezterm"
+terminal = "gnome-terminal"
 powermenu = "nwg-bar -t ~/.config/nwg-bar/exit-bar/bar.json -s ~/.config/nwg-bar/exit-bar/style.css"
 
 [linux.fonts.latin]
