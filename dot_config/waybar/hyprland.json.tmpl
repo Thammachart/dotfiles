@@ -13,6 +13,10 @@
     "custom/notification",
     "pulseaudio",
     "hyprland/language",
+    {{ if not (contains "Desktop" .chezmoi.hostname) -}}
+    "backlight", 
+    "battery", 
+    {{ end -}}
     "clock",
     "tray",
     "custom/power"
@@ -23,6 +27,23 @@
     "format-alt": "{:%Y-%m-%d}",
     "max-length": 25,
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["", ""]
+  },
+  "battery": {
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    "format-full": "",
+    "format-icons": ["", "", "", "", ""]
   },
   "hyprland/window": {
     "max-length": 50,
