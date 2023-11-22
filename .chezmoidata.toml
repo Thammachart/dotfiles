@@ -11,7 +11,7 @@ sans = "Ubuntu"
 serif = "Noto Serif"
 monospace = "JetBrains Mono NL"
 ui_monospace = "JetBrains Mono NL"
-terminal_monospace = "CaskaydiaCove Nerd Font"
+terminal_monospace = "CaskaydiaCove NFP"
 
 [linux.fonts.thai]
 sans = "Loma"
