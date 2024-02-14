@@ -6,8 +6,8 @@ terminal = "footclient"
 powermenu = "nwg-bar -t ~/.config/nwg-bar/exit-bar/bar.json -s ~/.config/nwg-bar/exit-bar/style.css"
 
 [linux.fonts.latin]
-ui = "Ubuntu"
-sans = "Ubuntu"
+ui = "Inter Display"
+sans = "Inter Display"
 serif = "Noto Serif"
 monospace = "JetBrains Mono NL"
 ui_monospace = "JetBrains Mono NL"
