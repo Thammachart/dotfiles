@@ -1,0 +1,7 @@
+[include]
+	path = ~/.config/git/gitalias.txt
+[user]
+	name = Thammachart
+	useConfigOnly = true
+[pull]
+	rebase = false

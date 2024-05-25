@@ -6,7 +6,7 @@
   "modules-center": ["sway/window"],
   "modules-right": [
     "idle_inhibitor", "custom/notification", "pulseaudio", "sway/language",
-    {{ if not (contains "Desktop" .chezmoi.hostname) -}}
+    {{ if ._laptop -}}
     "backlight", 
     "battery", 
     {{ end -}}

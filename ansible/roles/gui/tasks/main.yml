@@ -18,7 +18,7 @@
       - noto-fonts-emoji
       - ttf-jetbrains-mono-nerd
       - ttf-cascadia-code-nerd
-      - polkit-kde-agent 
+      - lxqt-policykit
       - pcmanfm-qt
       - evince
       - firefox

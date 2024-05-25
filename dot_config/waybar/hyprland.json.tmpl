@@ -13,7 +13,7 @@
     "custom/notification",
     "pulseaudio",
     "hyprland/language",
-    {{ if not (contains "Desktop" .chezmoi.hostname) -}}
+    {{ if ._laptop -}}
     "backlight", 
     "battery", 
     {{ end -}}

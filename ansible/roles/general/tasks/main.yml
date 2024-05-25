@@ -1,4 +1,9 @@
 ---
+- name: Generate Config for Home Dotfiles
+  template:
+    src: 'dotfiles-config.yml.j2'
+    dest: '{{ playbook_dir }}/../.chezmoidata/config.yml'
+
 - name: Enable Pacman Parallel Download
   become: true
   lineinfile:
@@ -6,6 +11,7 @@
     regexp: "^#ParallelDownloads.*$"
     line: "ParallelDownloads = 5"
     state: present
+  when: ansible_lsb.id == "archlinux"
 
 - name: Install necessities
   become: true
@@ -54,17 +60,17 @@
       - java-environment-common
       - go
       - rustup
-      - nodejs-lts-hydrogen
+      - nodejs-lts-iron
       - yarn
+      - pnpm
       - docker
       - docker-compose
-      - tlp
+      # - tlp
       - terminus-font
       - p7zip
       - unzip
       - acpi_call
       - lshw
-      - chrony
       - pam-u2f
       - gnome-keyring
     state: present
@@ -81,20 +87,11 @@
 - name: Import Time Tasks
   import_tasks: _time.yml
 
-- name: set variables for Personal
-  set_fact:
-    custom_hostname: "{{ owner }}-{{ ansible_system }}-{{ ansible_form_factor }}"
-  when: machine_type == "personal"
-
-- name: set variables for Work
-  set_fact:
-    custom_hostname: "{{ owner }}-Work-{{ ansible_system }}-{{ ansible_form_factor }}"
-  when: machine_type == "work"
-
-- name: Set hostname {{ custom_hostname }}
+- name: Set hostname {{ inventory_hostname }}
   hostname:
-    name: "{{ custom_hostname }}"
+    name: "{{ inventory_hostname }}"
     use: systemd
+
 - name: Enable Magic SysRq = {{ magicsysrq }}
   become: true
   lineinfile:
@@ -102,17 +99,20 @@
     line: "kernel.sysrq = {{ magicsysrq }}"
     state: present
     create: true
+
 - name: Install AUR Helper
   kewlfft.aur.aur:
-    name: yay
+    name: paru-bin
     state: present
     #skip_installed: true
+    #
 - name: Install AUR Components
   kewlfft.aur.aur:
     name:
       - fnm-bin
-      - jdk11-temurin
+      - jdk17-temurin
     state: present
+
 - name: Enable fstrim Timer
   become: true
   systemd:

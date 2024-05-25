@@ -1,0 +1,23 @@
+---
+_personal: true
+_laptop: false
+config_data:
+  linux:
+    general:
+      browser: "firefox"
+      launcher: "fuzzel"
+      locker: "swaylock -f -c 089966"
+      terminal: "footclient"
+      powermenu: "nwg-bar -t ~/.config/nwg-bar/exit-bar/bar.json -s ~/.config/nwg-bar/exit-bar/style.css"
+    fonts:
+      latin:
+        ui: "Inter Display"
+        sans: "Inter Display"
+        serif: "Noto Serif"
+        monospace: "JetBrains Mono NL"
+        ui_monospace: "JetBrains Mono NL"
+        terminal_monospace: "CaskaydiaCove NFP"
+      thai:
+        sans: "Noto Sans Thai"
+        serif: "Noto Serif Thai"
+        monospace: "Tlwg Typo"

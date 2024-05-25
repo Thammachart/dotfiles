@@ -42,7 +42,7 @@ alias dc='docker compose'
 
 alias tf='terraform'
 
-{{ if contains "Work" .chezmoi.hostname -}}
+{{ if not ._personal -}}
 # fnm
 eval $(fnm env)
 {{ end -}}
