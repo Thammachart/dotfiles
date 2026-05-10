@@ -7,22 +7,21 @@
       - ttf-cascadia-code
       - ttf-liberation
       - ttf-roboto
-      - ttf-fira-sans
-      - ttf-fira-code
-      - ttf-ubuntu-font-family
       - ttf-ibm-plex
       - inter-font
-      - adobe-source-serif-fonts
+      # - adobe-source-serif-fonts
       - noto-fonts
       - noto-fonts-cjk
       - noto-fonts-emoji
-      - ttf-jetbrains-mono-nerd
-      - ttf-cascadia-code-nerd
+      # - ttf-jetbrains-mono-nerd
+      # - ttf-cascadia-code-nerd
+      - otf-geist-mono-nerd
       - lxqt-policykit
       - pcmanfm-qt
-      - evince
-      - firefox
-      - chromium
+      - nautilus
+      - papers
+      # - firefox
+      # - chromium
       - network-manager-applet
       - mesa
       - libva-mesa-driver
@@ -34,65 +33,59 @@
       - swayidle
       - swaylock
       - waybar
+      - niri
       - mako
       - grim
       - slurp
       - wl-clipboard
+      - xdg-desktop-portal-gnome
       - xdg-desktop-portal-wlr
       - xdg-user-dirs
-      - foot 
-      - alacritty
-      - tilix
+      - ghostty
       - xorg-xwayland
       - fuzzel
-      - gammastep
-      - kanshi
+      - wlsunset
+      - shikane
       - pipewire
       - pipewire-pulse
       - pipewire-jack
       - pavucontrol
       - pamixer
       - geany
-      - code
+      - featherpad
+      # - code
       - libnotify
       - syncthing
       - keepassxc
       - papirus-icon-theme
-      - arc-gtk-theme
-      - qt5-wayland
-      - qt5ct
+      - pop-gtk-theme
+      - qt6-wayland
+      - qt6ct
       - kvantum
       - lxqt-archiver
       - lximage-qt
-      - qt5-imageformats
+      - qt6-imageformats
       - kimageformats
       - qalculate-gtk
       - udisks2
-      - udiskie
+      # - udiskie
       - greetd
       - greetd-tuigreet
       - greetd-regreet
+      - wlr-randr
     state: present
 - name: Install GUI-related components (AUR)
   kewlfft.aur.aur:
     name:
-      - fonts-tlwg
+      # - fonts-tlwg
       - brave-bin
       - vscodium-bin
-      - gtklock
-      - azote
-      - wlr-randr
-      - nwg-look-bin
-      - nwg-displays
-      - nwg-bar-bin
-      - swaync
-      - wlsunset
     state: present
 - name: udisks2 Mount Options
   become: true
   community.general.ini_file:
-    path: '{{ udisk_mount_options_path }}'
-    mode: '0644'
+    path: "{{ udisk_mount_options_path }}"
+    mode: "0644"
     section: defaults
     option: "{{ item.key }}"
     value: "{{ item.value }}"

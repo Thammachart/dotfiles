@@ -1,8 +1,8 @@
 ---
-- name: Generate Config for Home Dotfiles
-  template:
-    src: 'dotfiles-config.yml.j2'
-    dest: '{{ playbook_dir }}/../.chezmoidata/config.yml'
+# - name: Generate Config for Home Dotfiles
+#   template:
+#     src: "dotfiles-config.yml.j2"
+#     dest: "{{ playbook_dir }}/../.chezmoidata/config.yml"
 
 - name: Enable Pacman Parallel Download
   become: true
@@ -11,14 +11,14 @@
     regexp: "^#ParallelDownloads.*$"
     line: "ParallelDownloads = 5"
     state: present
-  when: ansible_lsb.id == "archlinux"
+  when: ansible_os_family == "Archlinux"
 
 - name: Install necessities
   become: true
   package:
     name:
       - sudo
-      - opendoas
+      # - opendoas
       - btrfs-progs
       - curl
       - curlie
@@ -32,15 +32,15 @@
       - python-pip
       - python-psutil
       - man-db
-      - tmux
       - htop
-      - bashtop
+      - btop
       - openssh
+      - nushell
       - zsh
-      - lsd
+      # - lsd
       - jq
       - go-yq
-      - gnupg
+      # - gnupg
       - firewalld
 
       ## Modern Unix
@@ -56,15 +56,16 @@
       - dog
       - traceroute
 
-      - java-runtime-common
-      - java-environment-common
-      - go
-      - rustup
-      - nodejs-lts-iron
-      - yarn
-      - pnpm
+      # - java-runtime-common
+      # - java-environment-common
+      # - go
+      # - rustup
+      # - nodejs-lts-iron
+      # - yarn
+      # - pnpm
       - docker
       - docker-compose
+      - podman
       # - tlp
       - terminus-font
       - p7zip
@@ -102,16 +103,16 @@
 
 - name: Install AUR Helper
   kewlfft.aur.aur:
-    name: paru-bin
+    name: yay-bin
     state: present
     #skip_installed: true
     #
-- name: Install AUR Components
-  kewlfft.aur.aur:
-    name:
-      - fnm-bin
-      - jdk17-temurin
-    state: present
+# - name: Install AUR Components
+#   kewlfft.aur.aur:
+#     name:
+#       - fnm-bin
+#       - jdk17-temurin
+#     state: present
 
 - name: Enable fstrim Timer
   become: true
@@ -150,11 +151,11 @@
     "LC_NUMERIC": "{{ numeric_locale }}"
     "LC_TIME": "{{ time_locale }}"
 
-- name: Ensure Rustup Stable Toolchain is installed
-  shell: rustup install stable
+# - name: Ensure Rustup Stable Toolchain is installed
+#   shell: rustup install stable
 
-- name: Import Zsh Tasks
-  import_tasks: _zsh.yml
+- name: Import Shell Tasks
+  import_tasks: _shell.yml
 
 - name: Import SSH Tasks
   import_tasks: _ssh.yml

@@ -4,7 +4,7 @@ _laptop: false
 config_data:
   linux:
     general:
-      browser: "firefox"
+      browser: "brave"
       launcher: "fuzzel"
       locker: "swaylock -f -c 089966"
       terminal: "footclient"
@@ -20,4 +20,4 @@ config_data:
       thai:
         sans: "Noto Sans Thai"
         serif: "Noto Serif Thai"
-        monospace: "Tlwg Typo"
+        monospace: "Noto Serif Thai"

@@ -1,7 +1,7 @@
 [local]
-tiikeri-pivot
+asiantuntija-orbit
 
 [local:vars]
 ansible_connection=local
-ansible_python_interpreter=/usr/bin/python3
+# ansible_python_interpreter=/usr/bin/python3
 superuser_group=wheel
