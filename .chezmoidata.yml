@@ -1,0 +1,27 @@
+_personal: true
+_laptop: true
+
+directoryStyle: "fg:#e3e5e5 bg:#2a7505"
+
+linux:
+  general:
+    terminal: "ghostty +new-window"
+    browser: "brave"
+    editor: "featherpad"
+    launcher: "fuzzel"
+    locker: "swaylock -f -c 089966"
+    powermenu: "nwg-bar -t ~/.config/nwg-bar/exit-bar/bar.json -s ~/.config/nwg-bar/exit-bar/style.css"
+
+  fonts:
+    latin:
+      sans: "Noto Sans"
+      serif: "Noto Serif"
+      ui: "Inter Display"
+      monospace: "Google Sans Code"
+      ui_monospace: "Google Sans Code"
+      terminal_monospace: "GeistMono NF"
+    thai:
+      sans: "Noto Sans Thai Looped"
+      serif: "Noto Serif Thai"
+      ui: "Noto Sans Thai Looped"
+      monospace: "JetBrains Mono"
