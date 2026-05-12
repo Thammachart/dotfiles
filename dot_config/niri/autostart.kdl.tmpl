@@ -3,18 +3,18 @@
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-spawn-sh-at-startup "systemd-cat -t waybar waybar -c ~/.config/waybar/niri.jsonc -s ~/.config/waybar/niri.css"
-spawn-sh-at-startup "systemd-cat -t mako mako"
+// spawn-sh-at-startup "systemd-cat -t waybar waybar -c ~/.config/waybar/niri.jsonc -s ~/.config/waybar/niri.css"
+// spawn-sh-at-startup "systemd-cat -t mako mako"
 
 {{ if (eq .linux.general.terminal "footclient") }}
 spawn-sh-at-startup "foot --server"
 {{ end }}
 
-spawn-at-startup "waypaper" "--restore"
+// spawn-at-startup "waypaper" "--restore"
 
-spawn-sh-at-startup "systemd-cat -t wlsunset wlsunset -S 06:30 -s 18:30 -d 1800 -t 4000 -T 6500"
+// spawn-sh-at-startup "systemd-cat -t wlsunset wlsunset -S 06:30 -s 18:30 -d 1800 -t 4000 -T 6500"
 
-spawn-sh-at-startup "systemd-cat -t shikane shikane"
+// spawn-sh-at-startup "systemd-cat -t shikane shikane"
 
 spawn-sh-at-startup "systemd-cat -t hypridle hypridle"
 
