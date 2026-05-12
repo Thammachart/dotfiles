@@ -1,8 +1,8 @@
 ---
-- name: Add groups to {{ ansible_user_id }}
+- name: Add groups to {{ ansible_facts['user_id'] }}
   become: true
   user:
-    name: "{{ ansible_user_id }}"
+    name: "{{ ansible_facts['user_id'] }}"
     groups:
       - "{{ superuser_group }}"
       - docker

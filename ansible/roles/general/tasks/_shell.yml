@@ -16,5 +16,5 @@
 - name: "{{ default_shell }} as Default Shell"
   become: true
   user:
-    name: "{{ ansible_user_id }}"
+    name: "{{ ansible_facts['user_id'] }}"
     shell: "{{ shell_path.stdout }}"

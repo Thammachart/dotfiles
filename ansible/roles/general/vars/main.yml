@@ -8,7 +8,7 @@ journald_config_directory: "/etc/systemd/journald.conf.d"
 resolved_config_directory: "/etc/systemd/resolved.conf.d"
 timesyncd_config_directory: "/etc/systemd/timesyncd.conf.d"
 default_shell: nu
-ssh_directory: "{{ ansible_env.HOME }}/.ssh"
+ssh_directory: "{{ ansible_facts['env'].HOME }}/.ssh"
 ntp_client_systemd_service: "systemd-timesyncd.service"
 ntp_sources:
   nimt:

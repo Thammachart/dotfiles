@@ -11,21 +11,28 @@
     regexp: "^#ParallelDownloads.*$"
     line: "ParallelDownloads = 5"
     state: present
-  when: ansible_os_family == "Archlinux"
+  when: ansible_facts["os_family"] == "Archlinux"
 
 - name: Install necessities
   become: true
   package:
     name:
+      - base
+      - base-devel
+      - linux-zen
+      - linux-firmware
       - sudo
       # - opendoas
       - btrfs-progs
+      - git
+      - lazygit
       - curl
       - curlie
       - wget
       - vim
       - ripgrep
       - neovim
+      - helix
       - base-devel
       - polkit
       - python
@@ -37,6 +44,8 @@
       - openssh
       - nushell
       - zsh
+      - chezmoi
+      - starship
       # - lsd
       - jq
       - go-yq
@@ -53,7 +62,7 @@
       - ldns
       - nmap
       - gping
-      - dog
+      - doggo
       - traceroute
 
       # - java-runtime-common
@@ -75,6 +84,19 @@
       - pam-u2f
       - gnome-keyring
     state: present
+
+- name: Install AUR Helper
+  kewlfft.aur.aur:
+    name: yay-bin
+    state: present
+    #skip_installed: true
+    #
+
+- name: Install necessities (AUR)
+  become: true
+  kewlfft.aur.aur:
+    name:
+      - carapace-bin
 
 - name: Import Privileges Tasks
   import_tasks: _privileges.yml
@@ -101,12 +123,6 @@
     state: present
     create: true
 
-- name: Install AUR Helper
-  kewlfft.aur.aur:
-    name: yay-bin
-    state: present
-    #skip_installed: true
-    #
 # - name: Install AUR Components
 #   kewlfft.aur.aur:
 #     name:

@@ -16,6 +16,7 @@
       # - ttf-jetbrains-mono-nerd
       # - ttf-cascadia-code-nerd
       - otf-geist-mono-nerd
+      - mpv
       - lxqt-policykit
       - pcmanfm-qt
       - nautilus
@@ -28,12 +29,17 @@
       - libva-utils
       - vulkan-icd-loader
       - vulkan-validation-layers
+      - vulkan-radeon
+      - nwg-bar
+      - nwg-look
       - sway
       - swaybg
       - swayidle
       - swaylock
       - waybar
       - niri
+      - dms-shell-niri
+      - matugen
       - mako
       - grim
       - slurp
@@ -52,13 +58,16 @@
       - pavucontrol
       - pamixer
       - geany
+      - zed
       - featherpad
       # - code
       - libnotify
       - syncthing
       - keepassxc
+      - pop-gtk-theme
       - papirus-icon-theme
       - pop-gtk-theme
+      - qt5-wayland
       - qt6-wayland
       - qt6ct
       - kvantum
@@ -78,6 +87,7 @@
   kewlfft.aur.aur:
     name:
       # - fonts-tlwg
+      - ttf-google-sans-code-vf
       - brave-bin
       - vscodium-bin
     state: present
