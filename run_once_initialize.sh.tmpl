@@ -1,26 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
-set -e
+set -euxo pipefail
 
-echo "Content Changed, if Ansible changed, do it manually"
-
-echo "$ chezmoi cd"
-echo "$ ansible-playbook -i ansible/hosts ansible/init.yml --ask-become-pass"
-
-# # Dotfiles' project root directory
-# ROOTDIR="$(pwd)/ansible"
-
-# # Host file location
-# HOSTS="$ROOTDIR/hosts"
-
-# # Main playbook
-# PLAYBOOK="$ROOTDIR/init.yml"
-
-# # Installs ansible
-# sudo pacman -Sy && sudo pacman -S --noconfirm --needed ansible git
-
-# # Install Ansible Extensions
-# ansible-galaxy install kewlfft.aur
-
-# # Runs Ansible playbook using our user.
-# ansible-playbook -i "$HOSTS" "$PLAYBOOK" --ask-become-pass
+systemctl --user add-wants niri.service dms
