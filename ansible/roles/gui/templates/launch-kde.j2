@@ -1,9 +1,0 @@
-#!/bin/sh
-
-source {{ wayland_enablement_path }}
-source {{ load_systemd_envs_path }}
-
-export XDG_SESSION_DESKTOP=plasma
-export XDG_CURRENT_DESKTOP=plasma
-
-exec systemd-cat --identifier=kde dbus-run-session startplasma-wayland
